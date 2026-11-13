@@ -1,0 +1,199 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "soil_mapunit_features",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mukey",
+    "musym",
+    "muname",
+    "dominant_texture",
+    "awc_weighted_cm_per_cm",
+    "organic_matter_weighted_pct",
+    "dominant_drainage_class",
+    "dominant_hydrologic_group",
+    "slope_weighted_pct",
+    "total_component_pct_accounted",
+    "source",
+    "root_zone_aws_0_150cm_mm"
+  ],
+  "properties": {
+    "mukey": {
+      "type": "string",
+      "description": "Stable USDA SSURGO map-unit join key; load as a string.",
+      "x-unit": null,
+      "pattern": "^\\d+$"
+    },
+    "musym": {
+      "type": "string",
+      "description": "Map-unit symbol.",
+      "x-unit": null,
+      "minLength": 1
+    },
+    "muname": {
+      "type": "string",
+      "description": "Official map-unit name.",
+      "x-unit": null,
+      "minLength": 1
+    },
+    "dominant_texture": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Dominant surface-horizon (0 cm) soil texture.",
+      "x-unit": null
+    },
+    "awc_weighted_cm_per_cm": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Component-weighted surface-horizon available water capacity; not root-zone storage or current moisture.",
+      "x-unit": "cm/cm",
+      "minimum": 0
+    },
+    "organic_matter_weighted_pct": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Component-weighted surface-horizon organic matter.",
+      "x-unit": "%",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "dominant_drainage_class": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Dominant soil drainage class.",
+      "x-unit": null
+    },
+    "dominant_hydrologic_group": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Dominant hydrologic soil group.",
+      "x-unit": null
+    },
+    "slope_weighted_pct": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Component-weighted representative slope (percent rise; may exceed 100).",
+      "x-unit": "%",
+      "minimum": 0
+    },
+    "total_component_pct_accounted": {
+      "type": "integer",
+      "description": "Source component coverage percentage; retained as a quality/context field.",
+      "x-unit": "%",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "source": {
+      "type": "string",
+      "description": "Unchanged source provenance label.",
+      "x-unit": null,
+      "minLength": 1
+    },
+    "root_zone_aws_0_150cm_mm": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "NRCS muaggatt.aws0_150wta, 0–150 cm root-zone available water storage; unavailable for all 86 records; never impute.",
+      "x-unit": "mm",
+      "minimum": 0
+    }
+  },
+  "x-dataset": {
+    "dataset_name": "soil_mapunit_features",
+    "path": "data/processed/features/soil_mapunit_features.csv",
+    "schema_path": "src/schemas/soil_mapunit_features.schema.json",
+    "source_path": "data/source_packages/member4_v3/soil/soil_summary.csv",
+    "primary_key": [
+      "mukey"
+    ],
+    "temporal_grain": "Static source soil attribute lookup; no observation year assigned",
+    "spatial_grain": "USDA SSURGO IA169 soil map unit (mukey), not individual polygon",
+    "county_scope": {
+      "name": "Story County, Iowa",
+      "geoid": "19169"
+    },
+    "optional": false,
+    "provenance": {
+      "source_path": "data/source_packages/member4_v3/soil/soil_summary.csv",
+      "evidence_paths": [
+        "data/source_packages/member4_v3/data_dictionary.md",
+        "data/source_packages/member4_v3/reports/phase2_input_audit.md"
+      ],
+      "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+    },
+    "validation": {
+      "expected_row_count": 86,
+      "coverage": {
+        "kind": "static"
+      },
+      "expected_missing_counts": {
+        "mukey": 0,
+        "musym": 0,
+        "muname": 0,
+        "dominant_texture": 9,
+        "awc_weighted_cm_per_cm": 9,
+        "organic_matter_weighted_pct": 9,
+        "dominant_drainage_class": 9,
+        "dominant_hydrologic_group": 9,
+        "slope_weighted_pct": 7,
+        "total_component_pct_accounted": 0,
+        "source": 0,
+        "root_zone_aws_0_150cm_mm": 86
+      },
+      "requirements": [
+        "Exact ordered source columns and declared CSV types.",
+        "Unique, non-null natural key within the declared spatial scope.",
+        "Finite numeric values, declared ranges, exact coverage and missing counts.",
+        "Source and output records identical, including order, precision and null markers.",
+        "Source/output/schema SHA-256 values and manifest metadata agree.",
+        "Dataset-specific calendar, denominator, quality and unit-consistency checks."
+      ]
+    },
+    "warnings": [
+      "Root-zone AWS is NULL for all 86 map units and must never be imputed.",
+      "Texture, surface AWC, organic matter, drainage, and hydrologic group each have nine NULLs; slope has seven NULLs.",
+      "Map units are soil survey units, not farm/field ownership boundaries. No map-unit crop statistics or geometry is delivered."
+    ]
+  },
+  "x-csv": {
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "ordered_columns": [
+      "mukey",
+      "musym",
+      "muname",
+      "dominant_texture",
+      "awc_weighted_cm_per_cm",
+      "organic_matter_weighted_pct",
+      "dominant_drainage_class",
+      "dominant_hydrologic_group",
+      "slope_weighted_pct",
+      "total_component_pct_accounted",
+      "source",
+      "root_zone_aws_0_150cm_mm"
+    ],
+    "null_tokens": [
+      "",
+      "NULL"
+    ],
+    "boolean_tokens": {
+      "True": true,
+      "False": false
+    },
+    "decode_before_json_schema_validation": true,
+    "note": "NULL and empty cells decode to JSON null only in nullable fields. Identifiers such as mukey stay strings. Units=null means not applicable or not separately verified."
+  }
+}

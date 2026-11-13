@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "modis_16day_features",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "date",
+    "ndvi_mean",
+    "ndvi_median",
+    "ndvi_std",
+    "ndvi_valid_pixel_count",
+    "ndvi_valid_pixel_percentage",
+    "evi_mean",
+    "evi_median",
+    "evi_std",
+    "evi_valid_pixel_count",
+    "evi_valid_pixel_percentage",
+    "total_pixel_count",
+    "base_valid_pixel_count",
+    "quality_valid_pixel_count",
+    "vi_usefulness_distribution_before_filter",
+    "vi_usefulness_distribution_after_filter"
+  ],
+  "properties": {
+    "date": {
+      "type": "string",
+      "description": "Source observation date (ISO calendar date).",
+      "x-unit": null,
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "ndvi_mean": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "NDVI mean over quality-passing county pixel observations; already scaled.",
+      "x-unit": "dimensionless"
+    },
+    "ndvi_median": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "NDVI median over quality-passing county pixel observations; already scaled.",
+      "x-unit": "dimensionless"
+    },
+    "ndvi_std": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "NDVI std over quality-passing county pixel observations; already scaled.",
+      "x-unit": "dimensionless",
+      "minimum": 0
+    },
+    "ndvi_valid_pixel_count": {
+      "type": "integer",
+      "description": "Quality-passing pixel observations contributing to this index.",
+      "x-unit": "pixel observations",
+      "minimum": 0
+    },
+    "ndvi_valid_pixel_percentage": {
+      "type": "number",
+      "description": "100 × valid pixel observations / total pixel observations.",
+      "x-unit": "%",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "evi_mean": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "EVI mean over quality-passing county pixel observations; already scaled.",
+      "x-unit": "dimensionless"
+    },
+    "evi_median": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "EVI median over quality-passing county pixel observations; already scaled.",
+      "x-unit": "dimensionless"
+    },
+    "evi_std": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "EVI std over quality-passing county pixel observations; already scaled.",
+      "x-unit": "dimensionless",
+      "minimum": 0
+    },
+    "evi_valid_pixel_count": {
+      "type": "integer",
+      "description": "Quality-passing pixel observations contributing to this index.",
+      "x-unit": "pixel observations",
+      "minimum": 0
+    },
+    "evi_valid_pixel_percentage": {
+      "type": "number",
+      "description": "100 × valid pixel observations / total pixel observations.",
+      "x-unit": "%",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "total_pixel_count": {
+      "type": "integer",
+      "description": "Pixel centers strictly within the Story County polygon.",
+      "x-unit": "pixels",
+      "const": 37193
+    },
+    "base_valid_pixel_count": {
+      "type": "integer",
+      "description": "Valid NDVI/EVI pixel pairs before quality filtering.",
+      "x-unit": "pixels",
+      "minimum": 0,
+      "maximum": 37193
+    },
+    "quality_valid_pixel_count": {
+      "type": "integer",
+      "description": "Base-valid pixel pairs passing reliability=0 and MODLAND QA=0.",
+      "x-unit": "pixels",
+      "minimum": 0,
+      "maximum": 37193
+    },
+    "vi_usefulness_distribution_before_filter": {
+      "type": "string",
+      "description": "JSON object mapping VI usefulness codes (bits 2–5) to base-valid pixel counts; no usefulness threshold applied.",
+      "x-unit": null,
+      "x-content": "json-count-object"
+    },
+    "vi_usefulness_distribution_after_filter": {
+      "type": "string",
+      "description": "JSON object mapping VI usefulness codes to quality-passing pixel counts.",
+      "x-unit": null,
+      "x-content": "json-count-object"
+    }
+  },
+  "x-dataset": {
+    "dataset_name": "modis_16day_features",
+    "path": "data/processed/features/modis_16day_features.csv",
+    "schema_path": "src/schemas/modis_16day_features.schema.json",
+    "source_path": "data/processed/modis/modis_16day_story_county_summary.csv",
+    "primary_key": [
+      "date"
+    ],
+    "temporal_grain": "Source 16-day composite observation date",
+    "spatial_grain": "Exact Story County pixel-center mask; 37,193 county pixel centers",
+    "county_scope": {
+      "name": "Story County, Iowa",
+      "geoid": "19169"
+    },
+    "optional": false,
+    "provenance": {
+      "source_path": "data/processed/modis/modis_16day_story_county_summary.csv",
+      "evidence_paths": [
+        "data/processed/modis/story_county_mask_report.md",
+        "data/processed/modis/modis_spatial_boundary_verification.md",
+        "data/processed/modis/modis_final_quality_audit.md"
+      ],
+      "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+    },
+    "validation": {
+      "expected_row_count": 207,
+      "coverage": {
+        "start": "2017-01-01",
+        "end": "2025-12-19",
+        "observations_per_year": 23
+      },
+      "expected_missing_counts": {
+        "date": 0,
+        "ndvi_mean": 18,
+        "ndvi_median": 18,
+        "ndvi_std": 18,
+        "ndvi_valid_pixel_count": 0,
+        "ndvi_valid_pixel_percentage": 0,
+        "evi_mean": 18,
+        "evi_median": 18,
+        "evi_std": 18,
+        "evi_valid_pixel_count": 0,
+        "evi_valid_pixel_percentage": 0,
+        "total_pixel_count": 0,
+        "base_valid_pixel_count": 0,
+        "quality_valid_pixel_count": 0,
+        "vi_usefulness_distribution_before_filter": 0,
+        "vi_usefulness_distribution_after_filter": 0
+      },
+      "requirements": [
+        "Exact ordered source columns and declared CSV types.",
+        "Unique, non-null natural key within the declared spatial scope.",
+        "Finite numeric values, declared ranges, exact coverage and missing counts.",
+        "Source and output records identical, including order, precision and null markers.",
+        "Source/output/schema SHA-256 values and manifest metadata agree.",
+        "Dataset-specific calendar, denominator, quality and unit-consistency checks."
+      ]
+    },
+    "warnings": [
+      "Use exact Story County pixel-center summaries only (37,193 pixels), not historical AOI/bounding-box summaries.",
+      "Monthly statistics pool valid pixel observations; means are weighted by valid pixel counts. Months 2019-02 and 2021-01 have no valid statistics.",
+      "Eighteen 16-day dates have no quality-passing pixels. December 2025 ends at the available 2025-12-19 observation; no interpolation.",
+      "MODIS vegetation indices describe county greenness, not crop-specific stress or field observations."
+    ]
+  },
+  "x-csv": {
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "ordered_columns": [
+      "date",
+      "ndvi_mean",
+      "ndvi_median",
+      "ndvi_std",
+      "ndvi_valid_pixel_count",
+      "ndvi_valid_pixel_percentage",
+      "evi_mean",
+      "evi_median",
+      "evi_std",
+      "evi_valid_pixel_count",
+      "evi_valid_pixel_percentage",
+      "total_pixel_count",
+      "base_valid_pixel_count",
+      "quality_valid_pixel_count",
+      "vi_usefulness_distribution_before_filter",
+      "vi_usefulness_distribution_after_filter"
+    ],
+    "null_tokens": [
+      "",
+      "NULL"
+    ],
+    "boolean_tokens": {
+      "True": true,
+      "False": false
+    },
+    "decode_before_json_schema_validation": true,
+    "note": "NULL and empty cells decode to JSON null only in nullable fields. Identifiers such as mukey stay strings. Units=null means not applicable or not separately verified."
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "crop_transition_features",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "year_1",
+    "year_2",
+    "transition_type",
+    "area_ha",
+    "area_pct",
+    "common_valid_area_ha"
+  ],
+  "properties": {
+    "year_1": {
+      "type": "integer",
+      "description": "Calendar year.",
+      "x-unit": null,
+      "minimum": 2021,
+      "maximum": 2025
+    },
+    "year_2": {
+      "type": "integer",
+      "description": "Calendar year.",
+      "x-unit": null,
+      "minimum": 2021,
+      "maximum": 2025
+    },
+    "transition_type": {
+      "type": "string",
+      "description": "Directed grouped transition label (Corn/Soybeans/Other -> Corn/Soybeans/Other).",
+      "x-unit": null,
+      "minLength": 1
+    },
+    "area_ha": {
+      "type": "number",
+      "description": "Area of this crop class or transition.",
+      "x-unit": "ha",
+      "minimum": 0
+    },
+    "area_pct": {
+      "type": "number",
+      "description": "100 × area_ha / the row's applicable denominator; source rounded to four decimals.",
+      "x-unit": "%",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "common_valid_area_ha": {
+      "type": "number",
+      "description": "Pair-specific county area valid in both consecutive years, excluding CDL 0 and 255.",
+      "x-unit": "ha",
+      "exclusiveMinimum": 0
+    }
+  },
+  "x-dataset": {
+    "dataset_name": "crop_transition_features",
+    "path": "data/processed/features/crop_transition_features.csv",
+    "schema_path": "src/schemas/crop_transition_features.schema.json",
+    "source_path": "data/source_packages/member4_v3/tables/crop_transitions.csv",
+    "primary_key": [
+      "year_1",
+      "year_2",
+      "transition_type"
+    ],
+    "temporal_grain": "Consecutive year pair × directed grouped transition",
+    "spatial_grain": "Story County common-valid CDL mask for each year pair; county totals",
+    "county_scope": {
+      "name": "Story County, Iowa",
+      "geoid": "19169"
+    },
+    "optional": false,
+    "provenance": {
+      "source_path": "data/source_packages/member4_v3/tables/crop_transitions.csv",
+      "evidence_paths": [
+        "data/source_packages/member4_v3/data_dictionary.md",
+        "data/source_packages/member4_v3/reports/validation_report.md"
+      ],
+      "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+    },
+    "validation": {
+      "expected_row_count": 36,
+      "coverage": {
+        "year_pairs": [
+          [
+            2021,
+            2022
+          ],
+          [
+            2022,
+            2023
+          ],
+          [
+            2023,
+            2024
+          ],
+          [
+            2024,
+            2025
+          ]
+        ]
+      },
+      "expected_missing_counts": {
+        "year_1": 0,
+        "year_2": 0,
+        "transition_type": 0,
+        "area_ha": 0,
+        "area_pct": 0,
+        "common_valid_area_ha": 0
+      },
+      "requirements": [
+        "Exact ordered source columns and declared CSV types.",
+        "Unique, non-null natural key within the declared spatial scope.",
+        "Finite numeric values, declared ranges, exact coverage and missing counts.",
+        "Source and output records identical, including order, precision and null markers.",
+        "Source/output/schema SHA-256 values and manifest metadata agree.",
+        "Dataset-specific calendar, denominator, quality and unit-consistency checks.",
+        "Per-year/per-pair denominators match documented values, area sums equal denominators, and every percentage recalculates within 0.000050001 percentage points."
+      ],
+      "percentage_tolerance_percentage_points": "0.000050001",
+      "denominator_ha_by_period": {
+        "2021->2022": "148572.90",
+        "2022->2023": "148572.90",
+        "2023->2024": "148539.33",
+        "2024->2025": "148573.80"
+      }
+    },
+    "warnings": [
+      "Each year pair has its own common-valid denominator; county totals do not locate transitions or establish farm management history."
+    ]
+  },
+  "x-csv": {
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "ordered_columns": [
+      "year_1",
+      "year_2",
+      "transition_type",
+      "area_ha",
+      "area_pct",
+      "common_valid_area_ha"
+    ],
+    "null_tokens": [
+      "",
+      "NULL"
+    ],
+    "boolean_tokens": {
+      "True": true,
+      "False": false
+    },
+    "decode_before_json_schema_validation": true,
+    "note": "NULL and empty cells decode to JSON null only in nullable fields. Identifiers such as mukey stay strings. Units=null means not applicable or not separately verified."
+  }
+}

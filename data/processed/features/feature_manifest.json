@@ -1,0 +1,298 @@
+{
+  "phase": "2A",
+  "contract_version": "1.0.0",
+  "county_scope": {
+    "name": "Story County, Iowa",
+    "geoid": "19169"
+  },
+  "processing": "Existing validated CSVs copied byte for byte; source values, order, dates, units, precision, and null tokens preserved.",
+  "source_inventory_path": "reports/phase2a_source_inventory.json",
+  "source_inventory_sha256": "922e12e3d3dc9f92c9df89064167235e7de7a67a0b4e751e8ab48114fc435dc9",
+  "datasets": [
+    {
+      "dataset_name": "nasa_power_monthly_features",
+      "path": "data/processed/features/nasa_power_monthly_features.csv",
+      "schema_path": "src/schemas/nasa_power_monthly_features.schema.json",
+      "source_path": "data/processed/nasa_power/power_monthly_by_location.csv",
+      "primary_key": [
+        "location_id",
+        "year",
+        "month"
+      ],
+      "temporal_grain": "Calendar month at each representative point",
+      "spatial_grain": "Four separate NASA POWER representative points; not a county average",
+      "optional": false,
+      "row_count": 432,
+      "source_sha256": "59e1e97a477f6d32767f5016da8b02dbd20b45f37ad65e33e65468f35aeff097",
+      "output_sha256": "59e1e97a477f6d32767f5016da8b02dbd20b45f37ad65e33e65468f35aeff097",
+      "schema_sha256": "ad7a90c10056a5df727b6ca4d7ab6ac671437dc89952b6000baf712490aa3895",
+      "coverage": {
+        "start": "2017-01",
+        "end": "2025-12",
+        "months_per_point": 108
+      },
+      "nullable_fields": [],
+      "provenance": {
+        "source_path": "data/processed/nasa_power/power_monthly_by_location.csv",
+        "evidence_paths": [
+          "data/processed/nasa_power/power_monthly_summary.md",
+          "data/processed/nasa_power/power_daily_final_audit.md",
+          "data/processed/nasa_power/power_selected_files.csv"
+        ],
+        "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+      }
+    },
+    {
+      "dataset_name": "modis_monthly_features",
+      "path": "data/processed/features/modis_monthly_features.csv",
+      "schema_path": "src/schemas/modis_monthly_features.schema.json",
+      "source_path": "data/processed/modis/modis_monthly_story_county_summary.csv",
+      "primary_key": [
+        "month"
+      ],
+      "temporal_grain": "Calendar month of available 16-day observations",
+      "spatial_grain": "Exact Story County pixel-center mask; pooled quality-passing pixel observations",
+      "optional": false,
+      "row_count": 108,
+      "source_sha256": "d2b1b8e4cad49d8c5b5ca7919a63ae27f0bb58e1b8ecc105dd3ebbe0cd4d70cf",
+      "output_sha256": "d2b1b8e4cad49d8c5b5ca7919a63ae27f0bb58e1b8ecc105dd3ebbe0cd4d70cf",
+      "schema_sha256": "67d745604737af542b4d72e9f0e5d5bceb5c7924218ea4ff8667bbfbdf2daeaf",
+      "coverage": {
+        "start": "2017-01",
+        "end": "2025-12"
+      },
+      "nullable_fields": [
+        "ndvi_mean",
+        "ndvi_median",
+        "ndvi_std",
+        "evi_mean",
+        "evi_median",
+        "evi_std"
+      ],
+      "provenance": {
+        "source_path": "data/processed/modis/modis_monthly_story_county_summary.csv",
+        "evidence_paths": [
+          "data/processed/modis/story_county_mask_report.md",
+          "data/processed/modis/modis_spatial_boundary_verification.md",
+          "data/processed/modis/modis_final_monthly_coverage.md"
+        ],
+        "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+      }
+    },
+    {
+      "dataset_name": "modis_16day_features",
+      "path": "data/processed/features/modis_16day_features.csv",
+      "schema_path": "src/schemas/modis_16day_features.schema.json",
+      "source_path": "data/processed/modis/modis_16day_story_county_summary.csv",
+      "primary_key": [
+        "date"
+      ],
+      "temporal_grain": "Source 16-day composite observation date",
+      "spatial_grain": "Exact Story County pixel-center mask; 37,193 county pixel centers",
+      "optional": false,
+      "row_count": 207,
+      "source_sha256": "5cd19585e01f55a1f988081f8c9990776fb1392a6b060ab70a8a5fb11f5b2c92",
+      "output_sha256": "5cd19585e01f55a1f988081f8c9990776fb1392a6b060ab70a8a5fb11f5b2c92",
+      "schema_sha256": "8c93852c8247b2429af8d67975ab05f6cd1d3ac31d428ee23fd415487cc4f7dd",
+      "coverage": {
+        "start": "2017-01-01",
+        "end": "2025-12-19",
+        "observations_per_year": 23
+      },
+      "nullable_fields": [
+        "ndvi_mean",
+        "ndvi_median",
+        "ndvi_std",
+        "evi_mean",
+        "evi_median",
+        "evi_std"
+      ],
+      "provenance": {
+        "source_path": "data/processed/modis/modis_16day_story_county_summary.csv",
+        "evidence_paths": [
+          "data/processed/modis/story_county_mask_report.md",
+          "data/processed/modis/modis_spatial_boundary_verification.md",
+          "data/processed/modis/modis_final_quality_audit.md"
+        ],
+        "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+      }
+    },
+    {
+      "dataset_name": "crop_annual_features",
+      "path": "data/processed/features/crop_annual_features.csv",
+      "schema_path": "src/schemas/crop_annual_features.schema.json",
+      "source_path": "data/source_packages/member4_v3/tables/crop_area_by_year.csv",
+      "primary_key": [
+        "year",
+        "crop_code"
+      ],
+      "temporal_grain": "Calendar year × grouped crop class (Corn/Soybeans/Other)",
+      "spatial_grain": "Story County annual valid CDL mask; county totals",
+      "optional": false,
+      "row_count": 15,
+      "source_sha256": "e5915ae52b040fe5b02ba2d4b1366a5a18864fbe99468a3f5dfcdf9d6527afaa",
+      "output_sha256": "e5915ae52b040fe5b02ba2d4b1366a5a18864fbe99468a3f5dfcdf9d6527afaa",
+      "schema_sha256": "c721bad67436bb190bc33e66a7632dbf7f71aaf447791ff0440a54cf8df8a0c6",
+      "coverage": {
+        "start_year": 2021,
+        "end_year": 2025
+      },
+      "nullable_fields": [],
+      "provenance": {
+        "source_path": "data/source_packages/member4_v3/tables/crop_area_by_year.csv",
+        "evidence_paths": [
+          "data/source_packages/member4_v3/data_dictionary.md",
+          "data/source_packages/member4_v3/reports/validation_report.md"
+        ],
+        "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+      }
+    },
+    {
+      "dataset_name": "crop_class_annual_features",
+      "path": "data/processed/features/crop_class_annual_features.csv",
+      "schema_path": "src/schemas/crop_class_annual_features.schema.json",
+      "source_path": "data/source_packages/member4_v3/tables/crop_class_area_by_year.csv",
+      "primary_key": [
+        "year",
+        "crop_code"
+      ],
+      "temporal_grain": "Calendar year × original CDL crop/land-cover class",
+      "spatial_grain": "Story County annual valid CDL mask; county totals",
+      "optional": false,
+      "row_count": 156,
+      "source_sha256": "e50cc6fb917830ae1f962ef7f00c7d8efc8f5b2e259f4f82e7cb7e5fa2d764f0",
+      "output_sha256": "e50cc6fb917830ae1f962ef7f00c7d8efc8f5b2e259f4f82e7cb7e5fa2d764f0",
+      "schema_sha256": "ee8c031c52e6ed04add237c76e4dd8c8a6836716799ab7c174b1da0dd6694b20",
+      "coverage": {
+        "start_year": 2021,
+        "end_year": 2025
+      },
+      "nullable_fields": [],
+      "provenance": {
+        "source_path": "data/source_packages/member4_v3/tables/crop_class_area_by_year.csv",
+        "evidence_paths": [
+          "data/source_packages/member4_v3/source_manifest.md",
+          "data/source_packages/member4_v3/reports/phase2_input_audit.md"
+        ],
+        "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+      }
+    },
+    {
+      "dataset_name": "crop_transition_features",
+      "path": "data/processed/features/crop_transition_features.csv",
+      "schema_path": "src/schemas/crop_transition_features.schema.json",
+      "source_path": "data/source_packages/member4_v3/tables/crop_transitions.csv",
+      "primary_key": [
+        "year_1",
+        "year_2",
+        "transition_type"
+      ],
+      "temporal_grain": "Consecutive year pair × directed grouped transition",
+      "spatial_grain": "Story County common-valid CDL mask for each year pair; county totals",
+      "optional": false,
+      "row_count": 36,
+      "source_sha256": "cd100b297f87934025008439a8a7044a42b3d1c97b39116300eba98a11233bd6",
+      "output_sha256": "cd100b297f87934025008439a8a7044a42b3d1c97b39116300eba98a11233bd6",
+      "schema_sha256": "c12bb97acba8eec03605adc420d933500e398965a715d2112fd9513785bba331",
+      "coverage": {
+        "year_pairs": [
+          [
+            2021,
+            2022
+          ],
+          [
+            2022,
+            2023
+          ],
+          [
+            2023,
+            2024
+          ],
+          [
+            2024,
+            2025
+          ]
+        ]
+      },
+      "nullable_fields": [],
+      "provenance": {
+        "source_path": "data/source_packages/member4_v3/tables/crop_transitions.csv",
+        "evidence_paths": [
+          "data/source_packages/member4_v3/data_dictionary.md",
+          "data/source_packages/member4_v3/reports/validation_report.md"
+        ],
+        "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+      }
+    },
+    {
+      "dataset_name": "soil_mapunit_features",
+      "path": "data/processed/features/soil_mapunit_features.csv",
+      "schema_path": "src/schemas/soil_mapunit_features.schema.json",
+      "source_path": "data/source_packages/member4_v3/soil/soil_summary.csv",
+      "primary_key": [
+        "mukey"
+      ],
+      "temporal_grain": "Static source soil attribute lookup; no observation year assigned",
+      "spatial_grain": "USDA SSURGO IA169 soil map unit (mukey), not individual polygon",
+      "optional": false,
+      "row_count": 86,
+      "source_sha256": "42c21b375fc03e87f6800543bc14ad277bf7ab1448bfb305a009bd282fbb0c0c",
+      "output_sha256": "42c21b375fc03e87f6800543bc14ad277bf7ab1448bfb305a009bd282fbb0c0c",
+      "schema_sha256": "f34854296f5e31c2dd71220398fef9c43412a41176818042811b883d41655432",
+      "coverage": {
+        "kind": "static"
+      },
+      "nullable_fields": [
+        "dominant_texture",
+        "awc_weighted_cm_per_cm",
+        "organic_matter_weighted_pct",
+        "dominant_drainage_class",
+        "dominant_hydrologic_group",
+        "slope_weighted_pct",
+        "root_zone_aws_0_150cm_mm"
+      ],
+      "provenance": {
+        "source_path": "data/source_packages/member4_v3/soil/soil_summary.csv",
+        "evidence_paths": [
+          "data/source_packages/member4_v3/data_dictionary.md",
+          "data/source_packages/member4_v3/reports/phase2_input_audit.md"
+        ],
+        "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+      }
+    },
+    {
+      "dataset_name": "merra2_monthly_context_features",
+      "path": "data/processed/features/merra2_monthly_context_features.csv",
+      "schema_path": "src/schemas/merra2_monthly_context_features.schema.json",
+      "source_path": "data/processed/merra2/merra2_selected_monthly.csv",
+      "primary_key": [
+        "date",
+        "latitude",
+        "longitude"
+      ],
+      "temporal_grain": "Source monthly mean × native grid cell",
+      "spatial_grain": "Separate coarse MERRA-2 native cells; one latitude row and two longitudes",
+      "optional": true,
+      "row_count": 422,
+      "source_sha256": "a2a3284080238a0365bded76861f35775e8517d73cacdfdc289071f2ec091ac4",
+      "output_sha256": "a2a3284080238a0365bded76861f35775e8517d73cacdfdc289071f2ec091ac4",
+      "schema_sha256": "686fb6a60a790f5bafd0aa7b9e50326b85e00b0fc9f46484c8b16d6fb5a089e7",
+      "coverage": {
+        "start": "2008-06",
+        "end": "2025-12",
+        "months_per_cell": 211
+      },
+      "nullable_fields": [],
+      "provenance": {
+        "source_path": "data/processed/merra2/merra2_selected_monthly.csv",
+        "evidence_paths": [
+          "data/processed/merra2/merra_extraction_report.md",
+          "data/processed/merra2/merra2_final_readiness_audit.md",
+          "data/processed/merra2/merra2_analysis_report.md"
+        ],
+        "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+      }
+    }
+  ],
+  "unavailable_datasets": []
+}

@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "crop_annual_features",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "year",
+    "crop_code",
+    "crop_name",
+    "area_ha",
+    "area_pct",
+    "valid_denominator_ha",
+    "source"
+  ],
+  "properties": {
+    "year": {
+      "type": "integer",
+      "description": "Calendar year.",
+      "x-unit": null,
+      "minimum": 2021,
+      "maximum": 2025
+    },
+    "crop_code": {
+      "type": "integer",
+      "description": "USDA CDL class code; 999 means aggregated Other only in the grouped table.",
+      "x-unit": null,
+      "minimum": 1
+    },
+    "crop_name": {
+      "type": "string",
+      "description": "Source crop/land-cover label; CDL_Class_* placeholders are preserved.",
+      "x-unit": null,
+      "minLength": 1
+    },
+    "area_ha": {
+      "type": "number",
+      "description": "Area of this crop class or transition.",
+      "x-unit": "ha",
+      "minimum": 0
+    },
+    "area_pct": {
+      "type": "number",
+      "description": "100 × area_ha / the row's applicable denominator; source rounded to four decimals.",
+      "x-unit": "%",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "valid_denominator_ha": {
+      "type": "number",
+      "description": "Year-specific valid county area excluding CDL 0 and 255.",
+      "x-unit": "ha",
+      "exclusiveMinimum": 0
+    },
+    "source": {
+      "type": "string",
+      "description": "Unchanged source provenance label.",
+      "x-unit": null,
+      "minLength": 1
+    }
+  },
+  "x-dataset": {
+    "dataset_name": "crop_annual_features",
+    "path": "data/processed/features/crop_annual_features.csv",
+    "schema_path": "src/schemas/crop_annual_features.schema.json",
+    "source_path": "data/source_packages/member4_v3/tables/crop_area_by_year.csv",
+    "primary_key": [
+      "year",
+      "crop_code"
+    ],
+    "temporal_grain": "Calendar year × grouped crop class (Corn/Soybeans/Other)",
+    "spatial_grain": "Story County annual valid CDL mask; county totals",
+    "county_scope": {
+      "name": "Story County, Iowa",
+      "geoid": "19169"
+    },
+    "optional": false,
+    "provenance": {
+      "source_path": "data/source_packages/member4_v3/tables/crop_area_by_year.csv",
+      "evidence_paths": [
+        "data/source_packages/member4_v3/data_dictionary.md",
+        "data/source_packages/member4_v3/reports/validation_report.md"
+      ],
+      "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+    },
+    "validation": {
+      "expected_row_count": 15,
+      "coverage": {
+        "start_year": 2021,
+        "end_year": 2025
+      },
+      "expected_missing_counts": {
+        "year": 0,
+        "crop_code": 0,
+        "crop_name": 0,
+        "area_ha": 0,
+        "area_pct": 0,
+        "valid_denominator_ha": 0,
+        "source": 0
+      },
+      "requirements": [
+        "Exact ordered source columns and declared CSV types.",
+        "Unique, non-null natural key within the declared spatial scope.",
+        "Finite numeric values, declared ranges, exact coverage and missing counts.",
+        "Source and output records identical, including order, precision and null markers.",
+        "Source/output/schema SHA-256 values and manifest metadata agree.",
+        "Dataset-specific calendar, denominator, quality and unit-consistency checks.",
+        "Per-year/per-pair denominators match documented values, area sums equal denominators, and every percentage recalculates within 0.000050001 percentage points."
+      ],
+      "percentage_tolerance_percentage_points": "0.000050001",
+      "denominator_ha_by_period": {
+        "2021": "148572.90",
+        "2022": "148572.90",
+        "2023": "148572.90",
+        "2024": "148573.80",
+        "2025": "148573.80"
+      }
+    },
+    "warnings": [
+      "Annual valid area is year-specific. Code 999 aggregates all classes other than Corn (1) and Soybeans (5); not a native CDL class."
+    ]
+  },
+  "x-csv": {
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "ordered_columns": [
+      "year",
+      "crop_code",
+      "crop_name",
+      "area_ha",
+      "area_pct",
+      "valid_denominator_ha",
+      "source"
+    ],
+    "null_tokens": [
+      "",
+      "NULL"
+    ],
+    "boolean_tokens": {
+      "True": true,
+      "False": false
+    },
+    "decode_before_json_schema_validation": true,
+    "note": "NULL and empty cells decode to JSON null only in nullable fields. Identifiers such as mukey stay strings. Units=null means not applicable or not separately verified."
+  }
+}

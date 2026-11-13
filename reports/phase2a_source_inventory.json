@@ -1,0 +1,285 @@
+{
+  "description": "Pre-build SHA-256 baseline of every existing data file, dependency file, .gitignore, and environment document. Excludes generated Phase 2A artifacts.",
+  "files": [
+    {
+      "path": "data/processed/merra2/merra2_analysis_monthly.csv",
+      "bytes": 70456,
+      "sha256": "d7f3be4ba3a9a0f6e0556bad4a06448f49a3fa106a6c0722b6aff842ba3381eb"
+    },
+    {
+      "path": "data/processed/merra2/merra2_analysis_report.md",
+      "bytes": 3699,
+      "sha256": "27cbbe03135aa7cb168b15fb79648caa61ef3993da475c8d342c2040f7464f3f"
+    },
+    {
+      "path": "data/processed/merra2/merra2_annual_summary.csv",
+      "bytes": 6432,
+      "sha256": "f07fd765b1aec55d5ddba5d718eb29a38f75fb45882f833685829a943aeefe6a"
+    },
+    {
+      "path": "data/processed/merra2/merra2_final_readiness_audit.md",
+      "bytes": 3291,
+      "sha256": "ede27c1dde4ea3a03493f08705bec932b266b1dbf77498a80e05adc9326224e4"
+    },
+    {
+      "path": "data/processed/merra2/merra2_seasonal_summary.csv",
+      "bytes": 24895,
+      "sha256": "7fffcbf5e2d35a960308d59a8ba69cd976a8d387b9880f4f7ddf528e4658b01f"
+    },
+    {
+      "path": "data/processed/merra2/merra2_selected_monthly.csv",
+      "bytes": 42889,
+      "sha256": "a2a3284080238a0365bded76861f35775e8517d73cacdfdc289071f2ec091ac4"
+    },
+    {
+      "path": "data/processed/merra2/merra_extraction_report.md",
+      "bytes": 1196,
+      "sha256": "6e565fce9f26ef5b6c01e283e8814a404ab45c15a5290dce15452e8cdcefbf8d"
+    },
+    {
+      "path": "data/processed/modis/modis_16day_story_county_summary.csv",
+      "bytes": 51746,
+      "sha256": "5cd19585e01f55a1f988081f8c9990776fb1392a6b060ab70a8a5fb11f5b2c92"
+    },
+    {
+      "path": "data/processed/modis/modis_final_monthly_coverage.md",
+      "bytes": 5692,
+      "sha256": "fb2440bb9a6600bfeca7f2f9200617486565b07ac131267e1792bb3d79c9149d"
+    },
+    {
+      "path": "data/processed/modis/modis_final_quality_audit.md",
+      "bytes": 10300,
+      "sha256": "c572524c5f281255713c70e9d6dcca798111011d795cd6177074a0701fd1df02"
+    },
+    {
+      "path": "data/processed/modis/modis_monthly_story_county_summary.csv",
+      "bytes": 17788,
+      "sha256": "d2b1b8e4cad49d8c5b5ca7919a63ae27f0bb58e1b8ecc105dd3ebbe0cd4d70cf"
+    },
+    {
+      "path": "data/processed/modis/modis_spatial_boundary_verification.md",
+      "bytes": 4521,
+      "sha256": "8f23d00a23264524c11f7462968dbf60647dfa26ea912fa6f6effe5eb5d184a6"
+    },
+    {
+      "path": "data/processed/modis/story_county_mask_report.md",
+      "bytes": 2776,
+      "sha256": "f3e52d50dc466275cbf7498d040cbee688c3ffe31e0b4eefff03253ff792f846"
+    },
+    {
+      "path": "data/processed/nasa_power/power_daily_all_locations_2017_2025.csv",
+      "bytes": 1012295,
+      "sha256": "c2074483a2b81d20609f2636fcbedaa67a8cb74f7cc8a1d8eb61da44952a9240"
+    },
+    {
+      "path": "data/processed/nasa_power/power_daily_final_audit.md",
+      "bytes": 4320,
+      "sha256": "1e2bc84d1d4c4bc8b0f4e868cacf65e18bdcd75c4e93b29fbbc7a83e7549ae83"
+    },
+    {
+      "path": "data/processed/nasa_power/power_merge_validation.md",
+      "bytes": 1681,
+      "sha256": "3cd828af719636322a0ade8646309c9eeb00c646463a4e4fd6e2814b6649206c"
+    },
+    {
+      "path": "data/processed/nasa_power/power_monthly_by_location.csv",
+      "bytes": 79518,
+      "sha256": "59e1e97a477f6d32767f5016da8b02dbd20b45f37ad65e33e65468f35aeff097"
+    },
+    {
+      "path": "data/processed/nasa_power/power_monthly_summary.md",
+      "bytes": 1591,
+      "sha256": "0ecabaf95c3847e97c934e2a9c8f33d2ad80dbefbdad8db4b0aeb0562a050cdc"
+    },
+    {
+      "path": "data/processed/nasa_power/power_selected_files.csv",
+      "bytes": 1424,
+      "sha256": "28be3acd824a3a2b86b6d6a87f3cac29b0d8515963b707f5f8413c12d8c6b18f"
+    },
+    {
+      "path": "data/reference/boundaries/story_county_19169.geojson",
+      "bytes": 26530,
+      "sha256": "37b9e0ccff7d84e6c26a35dcfa8c5f415682dd48814e93faa11423ca74ed9458"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/CHANGELOG.md",
+      "bytes": 1795,
+      "sha256": "7a495ef4945a4ace0dd9c3e885abd82b1b13f84ea775bebbbe7e1f5247ce1d41"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/README.md",
+      "bytes": 562,
+      "sha256": "e3b0a15e058055edbd56f7d23fdd13107100bbe7f5ef752cb12a2dc1ee63537f"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/README_AR.md",
+      "bytes": 3843,
+      "sha256": "8a100c21a1e57fa4cfda7e7d4e3ab09a3b61462d8430bb8d1e6002b0e1996755"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/config/scenario_definitions.json",
+      "bytes": 3797,
+      "sha256": "d151013c524c69307ca502a34f72f5bc680d8fd6dc729fce26a1cd4415af8851"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/docs/agricultural_references.md",
+      "bytes": 8420,
+      "sha256": "6e7cd33f64e6c4dd0450687ba3ffcb35c648e8923c4828fe15424e2edc3f6926"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/docs/crop_rotation_scenarios.md",
+      "bytes": 12336,
+      "sha256": "e0a47b97de9f902c5defcd6b33a52d4e3d6e21f0acf68744e9f9083cbb4fa855"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/docs/engine_use_rules.md",
+      "bytes": 4479,
+      "sha256": "eb222ca114cc242f5115b34db64580868fce189562624e64295e2fc8eb9214ce"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/docs/story_county_agricultural_context.md",
+      "bytes": 7221,
+      "sha256": "4f3ee705e10f1d7f5a8eb0ecfcbcbb19447ef6f39d18082e1f996d9909662618"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/original_source/Research_Package_Original_Unmodified.zip",
+      "bytes": 9724,
+      "sha256": "3d026ffeb30d7d213dbf05b82176f4d630ade009afd304619351ef5d736d4a26"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/original_v1/docs/agricultural_references.md",
+      "bytes": 3578,
+      "sha256": "d576187562644f616b0d693161366f5542e72a4f8c8db75565353dab4eeff71b"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/original_v1/docs/crop_rotation_scenarios.md",
+      "bytes": 6405,
+      "sha256": "74a5b331260fc56affc1189959b5760b9a6d5a88a0ba42cde5546ea1d39e40bc"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/original_v1/docs/story_county_agricultural_context.md",
+      "bytes": 4205,
+      "sha256": "df74dd79b654f29f761a13b430bbf8cbc1c8bd852d8ba32e29723b8631133403"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/original_v1/reports/crop_rotation_evidence_matrix.csv",
+      "bytes": 4241,
+      "sha256": "0fdfcf36a1c34534fa2ef3727ae4d674c591be9a1e197fc464c6669a202cebed"
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/reports/crop_rotation_evidence_matrix.csv",
+      "bytes": 3647,
+      "sha256": "987d5f5c10808d2937c984fae42db0c59f923b0027781ac8c1ca1a87cabf2758"
+    },
+    {
+      "path": "data/source_packages/member4_v3/data_dictionary.md",
+      "bytes": 2032,
+      "sha256": "f80e40746186bb8ea5dd6eb82f2c074659fffc330051ee13ea593afafbf109df"
+    },
+    {
+      "path": "data/source_packages/member4_v3/rasters/Story_County_CDL_2021_30m_EPSG5070.tif",
+      "bytes": 289334,
+      "sha256": "02e4b4f1dee870825874d47b980968e04c5a8e357cd811d0486d109f89ca9046"
+    },
+    {
+      "path": "data/source_packages/member4_v3/rasters/Story_County_CDL_2022_30m_EPSG5070.tif",
+      "bytes": 288405,
+      "sha256": "54663e1f4fb75acb79e41212218b37be54a23a39f874e6f4343ac362bd41450e"
+    },
+    {
+      "path": "data/source_packages/member4_v3/rasters/Story_County_CDL_2023_30m_EPSG5070.tif",
+      "bytes": 285919,
+      "sha256": "4912f109be0f1d08a404feacca8eaf43dc7458426a74ece5c5e2a31b3fce76cf"
+    },
+    {
+      "path": "data/source_packages/member4_v3/rasters/Story_County_CDL_2024_30m_EPSG5070.tif",
+      "bytes": 272490,
+      "sha256": "630f8d24016fed10e7b2b0b4b85a540ce00fccb49378de68c6c60eb0f9a33856"
+    },
+    {
+      "path": "data/source_packages/member4_v3/rasters/Story_County_CDL_2025_30m_EPSG5070.tif",
+      "bytes": 293879,
+      "sha256": "0c91913d79fad5d34c61a8d0c023c08fc05bdceceee1241db17d9e4762f22bd1"
+    },
+    {
+      "path": "data/source_packages/member4_v3/reports/correction_log.md",
+      "bytes": 1137,
+      "sha256": "1ef6c482dcbc7321e251ed95b1f377971565e3076313f445fdb3d7ab11c9af7e"
+    },
+    {
+      "path": "data/source_packages/member4_v3/reports/phase2_feature_specification.md",
+      "bytes": 5461,
+      "sha256": "c0c0a8e6a4295cf22dbdd404630973e95f1d7dc985239c8dbe7e06373275a9b0"
+    },
+    {
+      "path": "data/source_packages/member4_v3/reports/phase2_input_audit.md",
+      "bytes": 5450,
+      "sha256": "5e7957d9add22d205af83bc74a871bea0e0be7ec7d8a55bc5b19aebe36028ba5"
+    },
+    {
+      "path": "data/source_packages/member4_v3/reports/validation_report.md",
+      "bytes": 2775,
+      "sha256": "4b46aa71220771be2a6d6206b1c154f97e27e3dde12bb9a15ef99a6af7f22e2a"
+    },
+    {
+      "path": "data/source_packages/member4_v3/scripts/build_v3_package.py",
+      "bytes": 89,
+      "sha256": "967662854fb35327e7862e0c518e1800c4f78c88d285ca7fba9a1de461e1a084"
+    },
+    {
+      "path": "data/source_packages/member4_v3/soil/soil_map_units_epsg5070.gpkg",
+      "bytes": 67452928,
+      "sha256": "b03dcab29c961abd0eb261181f1aa7ba11c15b225878e9d4ca09f2eea3abf3dc"
+    },
+    {
+      "path": "data/source_packages/member4_v3/soil/soil_summary.csv",
+      "bytes": 11858,
+      "sha256": "42c21b375fc03e87f6800543bc14ad277bf7ab1448bfb305a009bd282fbb0c0c"
+    },
+    {
+      "path": "data/source_packages/member4_v3/source_manifest.md",
+      "bytes": 1340,
+      "sha256": "d18120cdfda42b8438fb005e5638722070c1f52a6f0c504bee3d67772f6209b6"
+    },
+    {
+      "path": "data/source_packages/member4_v3/tables/crop_area_by_year.csv",
+      "bytes": 939,
+      "sha256": "e5915ae52b040fe5b02ba2d4b1366a5a18864fbe99468a3f5dfcdf9d6527afaa"
+    },
+    {
+      "path": "data/source_packages/member4_v3/tables/crop_class_area_by_year.csv",
+      "bytes": 10612,
+      "sha256": "e50cc6fb917830ae1f962ef7f00c7d8efc8f5b2e259f4f82e7cb7e5fa2d764f0"
+    },
+    {
+      "path": "data/source_packages/member4_v3/tables/crop_transitions.csv",
+      "bytes": 1899,
+      "sha256": "cd100b297f87934025008439a8a7044a42b3d1c97b39116300eba98a11233bd6"
+    },
+    {
+      "path": "requirements-phase2.txt",
+      "bytes": 113,
+      "sha256": "371a1270071a07416f2faa7d119bfee5c1191f48ced05a40cfba46942cddb5d9"
+    },
+    {
+      "path": "requirements-phase2-lock.txt",
+      "bytes": 260,
+      "sha256": "61a39345143fab7507273efa24b163382800c0445965fc7c1cff5eac752c7394"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 7,
+      "sha256": "08239aadebf9a9b105e2efecca3129f9198067993418529ddc8117d41997b7ec"
+    },
+    {
+      "path": "docs/phase2_environment_audit.md",
+      "bytes": 3033,
+      "sha256": "052694d61555271dabd34aefeedde7c8c15fbd8ed128f821efa23d2755b0e0fd"
+    },
+    {
+      "path": "docs/phase2_environment_setup.md",
+      "bytes": 2932,
+      "sha256": "8b7aaaee5fbd76c9c98a353f78f009695e0a624f5e5e11b43a553886698e590b"
+    }
+  ]
+}

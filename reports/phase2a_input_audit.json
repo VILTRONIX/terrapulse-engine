@@ -1,0 +1,1419 @@
+{
+  "scope": "All original local CSVs, including daily and non-selected existing summaries; no regeneration.",
+  "null_tokens": [
+    "",
+    "NULL"
+  ],
+  "identifier_type_override": {
+    "mukey": "string"
+  },
+  "inputs": [
+    {
+      "path": "data/processed/merra2/merra2_analysis_monthly.csv",
+      "baseline_sha256": "d7f3be4ba3a9a0f6e0556bad4a06448f49a3fa106a6c0722b6aff842ba3381eb",
+      "row_count": 422,
+      "columns": [
+        {
+          "name": "date",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 211,
+          "min": "2008-06-01",
+          "max": "2025-12-01"
+        },
+        {
+          "name": "latitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": 42.0,
+          "max": 42.0
+        },
+        {
+          "name": "longitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": -93.75,
+          "max": -93.125
+        },
+        {
+          "name": "SPEED",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": 4.846402645111084,
+          "max": 9.569243431091309
+        },
+        {
+          "name": "EVAP",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": 2.354967818973819e-06,
+          "max": 6.57088530715555e-05
+        },
+        {
+          "name": "EFLUX",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": 5.814224720001221,
+          "max": 162.0687713623047
+        },
+        {
+          "name": "HFLUX",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": -2.4835493564605713,
+          "max": 91.26000213623047
+        },
+        {
+          "name": "days_in_month",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 28.0,
+          "max": 31.0
+        },
+        {
+          "name": "seconds_in_month",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 2419200.0,
+          "max": 2678400.0
+        },
+        {
+          "name": "EVAP_mm_month",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": 6.307545806339476,
+          "max": 172.56697788834572
+        },
+        {
+          "name": "EFLUX_MJ_m-2_month",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": 15.57281949005127,
+          "max": 425.62998940429685
+        },
+        {
+          "name": "HFLUX_MJ_m-2_month",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": -6.651938596343994,
+          "max": 244.4307897216797
+        }
+      ]
+    },
+    {
+      "path": "data/processed/merra2/merra2_annual_summary.csv",
+      "baseline_sha256": "f07fd765b1aec55d5ddba5d718eb29a38f75fb45882f833685829a943aeefe6a",
+      "row_count": 36,
+      "columns": [
+        {
+          "name": "year",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 18,
+          "min": 2008.0,
+          "max": 2025.0
+        },
+        {
+          "name": "latitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": 42.0,
+          "max": 42.0
+        },
+        {
+          "name": "longitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": -93.75,
+          "max": -93.125
+        },
+        {
+          "name": "SPEED_weighted_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 36,
+          "min": 6.821526908874512,
+          "max": 7.56177768968556
+        },
+        {
+          "name": "EVAP_weighted_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 36,
+          "min": 1.7779605017087225e-05,
+          "max": 3.619171101380293e-05
+        },
+        {
+          "name": "EFLUX_weighted_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 36,
+          "min": 43.89493489656292,
+          "max": 89.33795419586039
+        },
+        {
+          "name": "HFLUX_weighted_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 36,
+          "min": 6.7451330690740425,
+          "max": 40.34860572137468
+        },
+        {
+          "name": "days",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 3,
+          "min": 214.0,
+          "max": 366.0
+        },
+        {
+          "name": "seconds",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 3,
+          "min": 18489600.0,
+          "max": 31622400.0
+        },
+        {
+          "name": "months_present",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": 7.0,
+          "max": 12.0
+        },
+        {
+          "name": "expected_months",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": 12.0,
+          "max": 12.0
+        },
+        {
+          "name": "is_complete",
+          "inferred_csv_type": "boolean",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": "False",
+          "max": "True"
+        },
+        {
+          "name": "EVAP_mm",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 36,
+          "min": 562.2337816923391,
+          "max": 1000.4900933410681
+        },
+        {
+          "name": "EFLUX_MJ_m-2",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 36,
+          "min": 1388.063189273071,
+          "max": 2475.4314987487796
+        },
+        {
+          "name": "HFLUX_MJ_m-2",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 36,
+          "min": 124.71481239395142,
+          "max": 1275.9197495635988
+        }
+      ]
+    },
+    {
+      "path": "data/processed/merra2/merra2_seasonal_summary.csv",
+      "baseline_sha256": "7fffcbf5e2d35a960308d59a8ba69cd976a8d387b9880f4f7ddf528e4658b01f",
+      "row_count": 142,
+      "columns": [
+        {
+          "name": "season_year",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 19,
+          "min": 2008.0,
+          "max": 2026.0
+        },
+        {
+          "name": "season",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": "DJF",
+          "max": "SON"
+        },
+        {
+          "name": "latitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": 42.0,
+          "max": 42.0
+        },
+        {
+          "name": "longitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": -93.75,
+          "max": -93.125
+        },
+        {
+          "name": "SPEED_weighted_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 142,
+          "min": 5.285143686377483,
+          "max": 8.651304784028426
+        },
+        {
+          "name": "EVAP_weighted_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 142,
+          "min": 3.821216505962689e-06,
+          "max": 6.310430319939294e-05
+        },
+        {
+          "name": "EFLUX_weighted_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 142,
+          "min": 9.994720458984375,
+          "max": 155.64602793817934
+        },
+        {
+          "name": "HFLUX_weighted_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 142,
+          "min": 0.3272701336691777,
+          "max": 76.42595224795134
+        },
+        {
+          "name": "days",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 31.0,
+          "max": 92.0
+        },
+        {
+          "name": "seconds",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 2678400.0,
+          "max": 7948800.0
+        },
+        {
+          "name": "months_present",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": 1.0,
+          "max": 3.0
+        },
+        {
+          "name": "expected_months",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": 3.0,
+          "max": 3.0
+        },
+        {
+          "name": "is_complete",
+          "inferred_csv_type": "boolean",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": "False",
+          "max": "True"
+        },
+        {
+          "name": "EVAP_mm",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 142,
+          "min": 10.358012333745137,
+          "max": 501.60348527133465
+        },
+        {
+          "name": "EFLUX_MJ_m-2",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 142,
+          "min": 26.76985927734375,
+          "max": 1237.199146875
+        },
+        {
+          "name": "HFLUX_MJ_m-2",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 142,
+          "min": 2.544852559411526,
+          "max": 607.4946092285156
+        }
+      ]
+    },
+    {
+      "path": "data/processed/merra2/merra2_selected_monthly.csv",
+      "baseline_sha256": "a2a3284080238a0365bded76861f35775e8517d73cacdfdc289071f2ec091ac4",
+      "row_count": 422,
+      "columns": [
+        {
+          "name": "date",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 211,
+          "min": "2008-06-01",
+          "max": "2025-12-01"
+        },
+        {
+          "name": "latitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": 42.0,
+          "max": 42.0
+        },
+        {
+          "name": "longitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": -93.75,
+          "max": -93.125
+        },
+        {
+          "name": "SPEED",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": 4.846402645111084,
+          "max": 9.569243431091309
+        },
+        {
+          "name": "EVAP",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": 2.354967818973819e-06,
+          "max": 6.57088530715555e-05
+        },
+        {
+          "name": "EFLUX",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": 5.814224720001221,
+          "max": 162.0687713623047
+        },
+        {
+          "name": "HFLUX",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 422,
+          "min": -2.4835493564605713,
+          "max": 91.26000213623047
+        }
+      ]
+    },
+    {
+      "path": "data/processed/modis/modis_16day_story_county_summary.csv",
+      "baseline_sha256": "5cd19585e01f55a1f988081f8c9990776fb1392a6b060ab70a8a5fb11f5b2c92",
+      "row_count": 207,
+      "columns": [
+        {
+          "name": "date",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 207,
+          "min": "2017-01-01",
+          "max": "2025-12-19"
+        },
+        {
+          "name": "ndvi_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 18,
+          "distinct_non_null_count": 189,
+          "min": 0.21029853135625237,
+          "max": 0.8695623856480933
+        },
+        {
+          "name": "ndvi_median",
+          "inferred_csv_type": "number",
+          "missing_count": 18,
+          "distinct_non_null_count": 182,
+          "min": 0.19890000000000002,
+          "max": 0.9001
+        },
+        {
+          "name": "ndvi_std",
+          "inferred_csv_type": "number",
+          "missing_count": 18,
+          "distinct_non_null_count": 189,
+          "min": 0.03174733994235213,
+          "max": 0.16351956065395049
+        },
+        {
+          "name": "ndvi_valid_pixel_count",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 185,
+          "min": 0.0,
+          "max": 37193.0
+        },
+        {
+          "name": "ndvi_valid_pixel_percentage",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 185,
+          "min": 0.0,
+          "max": 100.0
+        },
+        {
+          "name": "evi_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 18,
+          "distinct_non_null_count": 189,
+          "min": 0.10082423349056605,
+          "max": 0.7561052413793105
+        },
+        {
+          "name": "evi_median",
+          "inferred_csv_type": "number",
+          "missing_count": 18,
+          "distinct_non_null_count": 181,
+          "min": 0.09620000000000001,
+          "max": 0.7877500000000001
+        },
+        {
+          "name": "evi_std",
+          "inferred_csv_type": "number",
+          "missing_count": 18,
+          "distinct_non_null_count": 189,
+          "min": 0.019346324173386296,
+          "max": 0.1561822972898702
+        },
+        {
+          "name": "evi_valid_pixel_count",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 185,
+          "min": 0.0,
+          "max": 37193.0
+        },
+        {
+          "name": "evi_valid_pixel_percentage",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 185,
+          "min": 0.0,
+          "max": 100.0
+        },
+        {
+          "name": "total_pixel_count",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": 37193.0,
+          "max": 37193.0
+        },
+        {
+          "name": "base_valid_pixel_count",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 8,
+          "min": 37181.0,
+          "max": 37193.0
+        },
+        {
+          "name": "quality_valid_pixel_count",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 185,
+          "min": 0.0,
+          "max": 37193.0
+        },
+        {
+          "name": "vi_usefulness_distribution_before_filter",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 207,
+          "min": "{\"1\": 10057, \"2\": 27136}",
+          "max": "{\"5\": 37193}"
+        },
+        {
+          "name": "vi_usefulness_distribution_after_filter",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 190,
+          "min": "{\"1\": 10057, \"2\": 27022}",
+          "max": "{}"
+        }
+      ]
+    },
+    {
+      "path": "data/processed/modis/modis_monthly_story_county_summary.csv",
+      "baseline_sha256": "d2b1b8e4cad49d8c5b5ca7919a63ae27f0bb58e1b8ecc105dd3ebbe0cd4d70cf",
+      "row_count": 108,
+      "columns": [
+        {
+          "name": "month",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 108,
+          "min": "2017-01",
+          "max": "2025-12"
+        },
+        {
+          "name": "observation_count",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": 1.0,
+          "max": 2.0
+        },
+        {
+          "name": "total_pixel_observations",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": 37193.0,
+          "max": 74386.0
+        },
+        {
+          "name": "ndvi_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 2,
+          "distinct_non_null_count": 106,
+          "min": 0.21029853135625237,
+          "max": 0.8675222733334332
+        },
+        {
+          "name": "ndvi_median",
+          "inferred_csv_type": "number",
+          "missing_count": 2,
+          "distinct_non_null_count": 105,
+          "min": 0.19890000000000002,
+          "max": 0.8966000000000001
+        },
+        {
+          "name": "ndvi_std",
+          "inferred_csv_type": "number",
+          "missing_count": 2,
+          "distinct_non_null_count": 106,
+          "min": 0.032568534336060745,
+          "max": 0.17762666226487145
+        },
+        {
+          "name": "ndvi_valid_pixel_count",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 106,
+          "min": 0.0,
+          "max": 74284.0
+        },
+        {
+          "name": "ndvi_valid_pixel_percentage",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 106,
+          "min": 0.0,
+          "max": 100.0
+        },
+        {
+          "name": "evi_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 2,
+          "distinct_non_null_count": 106,
+          "min": 0.10082423349056605,
+          "max": 0.7288931723287151
+        },
+        {
+          "name": "evi_median",
+          "inferred_csv_type": "number",
+          "missing_count": 2,
+          "distinct_non_null_count": 101,
+          "min": 0.09620000000000001,
+          "max": 0.7514000000000001
+        },
+        {
+          "name": "evi_std",
+          "inferred_csv_type": "number",
+          "missing_count": 2,
+          "distinct_non_null_count": 106,
+          "min": 0.02063345304786013,
+          "max": 0.1727474260525301
+        },
+        {
+          "name": "evi_valid_pixel_count",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 106,
+          "min": 0.0,
+          "max": 74284.0
+        },
+        {
+          "name": "evi_valid_pixel_percentage",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 106,
+          "min": 0.0,
+          "max": 100.0
+        }
+      ]
+    },
+    {
+      "path": "data/processed/nasa_power/power_daily_all_locations_2017_2025.csv",
+      "baseline_sha256": "c2074483a2b81d20609f2636fcbedaa67a8cb74f7cc8a1d8eb61da44952a9240",
+      "row_count": 13148,
+      "columns": [
+        {
+          "name": "location_id",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": "DG001",
+          "max": "DG004"
+        },
+        {
+          "name": "latitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 41.8914,
+          "max": 42.0222
+        },
+        {
+          "name": "longitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": -93.5283,
+          "max": -93.3144
+        },
+        {
+          "name": "date",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 3287,
+          "min": "2017-01-01",
+          "max": "2025-12-31"
+        },
+        {
+          "name": "YEAR",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 9,
+          "min": 2017.0,
+          "max": 2025.0
+        },
+        {
+          "name": "DOY",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 366,
+          "min": 1.0,
+          "max": 366.0
+        },
+        {
+          "name": "T2M",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 3239,
+          "min": -26.78,
+          "max": 31.58
+        },
+        {
+          "name": "T2M_MAX",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 3350,
+          "min": -21.17,
+          "max": 40.29
+        },
+        {
+          "name": "T2M_MIN",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 3253,
+          "min": -33.81,
+          "max": 27.35
+        },
+        {
+          "name": "PRECTOTCORR",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 1126,
+          "min": 0.0,
+          "max": 57.59
+        },
+        {
+          "name": "ALLSKY_SFC_SW_DWN",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 2581,
+          "min": 0.88,
+          "max": 31.92
+        },
+        {
+          "name": "RH2M",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 3533,
+          "min": 36.42,
+          "max": 99.66
+        }
+      ]
+    },
+    {
+      "path": "data/processed/nasa_power/power_monthly_by_location.csv",
+      "baseline_sha256": "59e1e97a477f6d32767f5016da8b02dbd20b45f37ad65e33e65468f35aeff097",
+      "row_count": 432,
+      "columns": [
+        {
+          "name": "location_id",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": "DG001",
+          "max": "DG004"
+        },
+        {
+          "name": "latitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 41.8914,
+          "max": 42.0222
+        },
+        {
+          "name": "longitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": -93.5283,
+          "max": -93.3144
+        },
+        {
+          "name": "year",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 9,
+          "min": 2017.0,
+          "max": 2025.0
+        },
+        {
+          "name": "month",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 12,
+          "min": 1.0,
+          "max": 12.0
+        },
+        {
+          "name": "month_start",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 108,
+          "min": "2017-01-01",
+          "max": "2025-12-01"
+        },
+        {
+          "name": "month_end",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 108,
+          "min": "2017-01-31",
+          "max": "2025-12-31"
+        },
+        {
+          "name": "days_expected",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 28.0,
+          "max": 31.0
+        },
+        {
+          "name": "days_present",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 28.0,
+          "max": 31.0
+        },
+        {
+          "name": "complete",
+          "inferred_csv_type": "boolean",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": "True",
+          "max": "True"
+        },
+        {
+          "name": "T2M_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 216,
+          "min": -10.052857142857144,
+          "max": 25.838709677419356
+        },
+        {
+          "name": "T2M_MAX_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 215,
+          "min": -4.8689285714285715,
+          "max": 32.14193548387097
+        },
+        {
+          "name": "T2M_MIN_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 216,
+          "min": -14.1725,
+          "max": 20.25741935483871
+        },
+        {
+          "name": "PRECTOTCORR_total",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 214,
+          "min": 3.71,
+          "max": 243.85
+        },
+        {
+          "name": "PRECTOTCORR_daily_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 214,
+          "min": 0.1279310344827586,
+          "max": 7.866129032258065
+        },
+        {
+          "name": "ALLSKY_SFC_SW_DWN_total",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 216,
+          "min": 145.65,
+          "max": 801.48
+        },
+        {
+          "name": "ALLSKY_SFC_SW_DWN_daily_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 216,
+          "min": 4.698387096774193,
+          "max": 26.716
+        },
+        {
+          "name": "RH2M_mean",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 214,
+          "min": 50.251935483870966,
+          "max": 91.69321428571428
+        }
+      ]
+    },
+    {
+      "path": "data/processed/nasa_power/power_selected_files.csv",
+      "baseline_sha256": "28be3acd824a3a2b86b6d6a87f3cac29b0d8515963b707f5f8413c12d8c6b18f",
+      "row_count": 4,
+      "columns": [
+        {
+          "name": "group_id",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": "DG001",
+          "max": "DG004"
+        },
+        {
+          "name": "selected_representative_filename",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": "POWER_Point_Daily_20170101_20241231_041d89N_093d40W_UTC.csv",
+          "max": "POWER_Point_Daily_20170101_20241231_042d02N_093d45W_UTC.csv"
+        },
+        {
+          "name": "latitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 41.8914,
+          "max": 42.0222
+        },
+        {
+          "name": "longitude",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": -93.5283,
+          "max": -93.3144
+        },
+        {
+          "name": "duplicate_member_filenames",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": "POWER_Point_Daily_20170101_20241231_041d89N_093d40W_UTC.csv",
+          "max": "POWER_Point_Daily_20170101_20241231_042d02N_093d45W_UTC.csv|POWER_Point_Daily_20170101_20241231_042d03N_093d63W_UTC.csv|POWER_Point_Daily_20170101_20241231_042d11N_093d64W_UTC.csv|POWER_Point_Daily_20170101_20241231_042d17N_093d50W_UTC.csv|POWER_Point_Daily_20170101_20241231_042d19N_093d60W_UTC.csv"
+        },
+        {
+          "name": "date_coverage",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": "2017-01-01 through 2024-12-31",
+          "max": "2017-01-01 through 2024-12-31"
+        },
+        {
+          "name": "data_hash",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": "1927eee60e22037d17a2a253f343d5944c1e81010bc193bc40f2d27a2a72a9e3",
+          "max": "e86581018cd62ee666d4f5028d8b077b055d30bf6bbf22bec6d7e973e5dc99c3"
+        }
+      ]
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/original_v1/reports/crop_rotation_evidence_matrix.csv",
+      "baseline_sha256": "0fdfcf36a1c34534fa2ef3727ae4d674c591be9a1e197fc464c6669a202cebed",
+      "row_count": 6,
+      "columns": [
+        {
+          "name": "Indicator",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 6,
+          "min": "Agricultural Feasibility",
+          "max": "Water Availability & Management"
+        },
+        {
+          "name": "Scenario_A_Baseline",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 6,
+          "min": "Elevated sheet/rill erosion risk on sloping soils (2–10%) after low-residue soybean harvest.",
+          "max": "Very High: standard equipment, seed, crop insurance, and grain elevator markets."
+        },
+        {
+          "name": "Scenario_B_Water_First",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 6,
+          "min": "Delayed spring rye termination causing nitrogen tie-up or moisture depletion before corn.",
+          "max": "Winter rye captures excess spring moisture, improves infiltration, and reduces tile nitrate export."
+        },
+        {
+          "name": "Scenario_C_Soil_First",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 6,
+          "min": "Continuous 2-year perennial alfalfa cover provides near-complete erosion protection.",
+          "max": "Substantially increases particulate organic matter and total SOM via deep perennial roots."
+        },
+        {
+          "name": "Measurable_with_Available_Datasets",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 6,
+          "min": "NASA MODIS NDVI and EVI seasonal time-series phenology curves cross-referenced with USDA CDL crop classifications.",
+          "max": "USDA CDL 2021–2025 empirical transition rates (showing >70% adherence to corn-soybean rotations in Story County)."
+        },
+        {
+          "name": "Supported_by_Published_Research",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 6,
+          "min": "Cruse et al. (2006) & INRS (2017) demonstrate that winter cover crops and perennial sod phases sharply reduce soil detachment and sediment loss.",
+          "max": "Liebman et al. (2013) & ISU Extension highlight economic competitiveness of extended rotations when livestock/forage markets exist, alongside adoption barriers."
+        },
+        {
+          "name": "Remains_Unknown_Without_Field_Data",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 6,
+          "min": "Current field-specific lab SOM measurements, exact tillage intensity per parcel, and manure application history.",
+          "max": "Sub-pixel (30m/250m) within-field stress causes (e.g., localized pest outbreaks vs. nutrient deficiency)."
+        }
+      ]
+    },
+    {
+      "path": "data/source_packages/TerraPulse_Research_Package_V2/reports/crop_rotation_evidence_matrix.csv",
+      "baseline_sha256": "987d5f5c10808d2937c984fae42db0c59f923b0027781ac8c1ca1a87cabf2758",
+      "row_count": 7,
+      "columns": [
+        {
+          "name": "﻿Indicator",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 7,
+          "min": "Crop history and rotation",
+          "max": "Water availability and management"
+        },
+        {
+          "name": "Scenario_A_Baseline",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 7,
+          "min": "Conventional crop sequence has established local infrastructure, but local costs are not in current data.",
+          "max": "Weather and soil context; no direct root-zone moisture measurement."
+        },
+        {
+          "name": "Scenario_B_Water_First",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 7,
+          "min": "Cash-crop sequence retained; rye is an added management practice.",
+          "max": "Winter cover can protect soil surface; magnitude depends on establishment and management."
+        },
+        {
+          "name": "Scenario_C_Soil_First",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 7,
+          "min": "Diversified corn–soy–oats/alfalfa sequence.",
+          "max": "Requires oats/forage harvest, storage, machinery, labor, and forage market access."
+        },
+        {
+          "name": "Local_Data_Inputs",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 7,
+          "min": "CDL annual classes and pixel transitions.",
+          "max": "User-entered farm costs, machinery, contracts, prices; qualitative research evidence."
+        },
+        {
+          "name": "Evidence_and_Limitations",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 7,
+          "min": "CDL is a classified raster, not farm records; transitions are not producer adoption rates.",
+          "max": "SSURGO is not a time series and cannot measure scenario-caused SOM change."
+        },
+        {
+          "name": "Engine_Treatment",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 7,
+          "min": "Compare seasonal curves at native resolution; don't claim crop stress diagnosis or cover-crop verification.",
+          "max": "Use mapped crop-class history only; do not call it farm-level rotation history."
+        }
+      ]
+    },
+    {
+      "path": "data/source_packages/member4_v3/soil/soil_summary.csv",
+      "baseline_sha256": "42c21b375fc03e87f6800543bc14ad277bf7ab1448bfb305a009bd282fbb0c0c",
+      "row_count": 86,
+      "columns": [
+        {
+          "name": "mukey",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 86,
+          "min": "1428042",
+          "max": "411348"
+        },
+        {
+          "name": "musym",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 86,
+          "min": "107",
+          "max": "W"
+        },
+        {
+          "name": "muname",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 86,
+          "min": "Animal waste lagoon",
+          "max": "Zook silty clay loam, 0 to 2 percent slopes, occasionally flooded"
+        },
+        {
+          "name": "dominant_texture",
+          "inferred_csv_type": "string",
+          "missing_count": 9,
+          "distinct_non_null_count": 9,
+          "min": "Clay loam",
+          "max": "Silty clay loam"
+        },
+        {
+          "name": "awc_weighted_cm_per_cm",
+          "inferred_csv_type": "number",
+          "missing_count": 9,
+          "distinct_non_null_count": 44,
+          "min": 0.11,
+          "max": 0.38
+        },
+        {
+          "name": "organic_matter_weighted_pct",
+          "inferred_csv_type": "number",
+          "missing_count": 9,
+          "distinct_non_null_count": 58,
+          "min": 1.455,
+          "max": 59.3
+        },
+        {
+          "name": "dominant_drainage_class",
+          "inferred_csv_type": "string",
+          "missing_count": 9,
+          "distinct_non_null_count": 7,
+          "min": "Excessively drained",
+          "max": "Well drained"
+        },
+        {
+          "name": "dominant_hydrologic_group",
+          "inferred_csv_type": "string",
+          "missing_count": 9,
+          "distinct_non_null_count": 5,
+          "min": "A",
+          "max": "C/D"
+        },
+        {
+          "name": "slope_weighted_pct",
+          "inferred_csv_type": "number",
+          "missing_count": 7,
+          "distinct_non_null_count": 54,
+          "min": 0.0,
+          "max": 38.0
+        },
+        {
+          "name": "total_component_pct_accounted",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": 100.0,
+          "max": 100.0
+        },
+        {
+          "name": "source",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 1,
+          "min": "USDA_NRCS_SSURGO_IA169",
+          "max": "USDA_NRCS_SSURGO_IA169"
+        },
+        {
+          "name": "root_zone_aws_0_150cm_mm",
+          "inferred_csv_type": "all-null",
+          "missing_count": 86,
+          "distinct_non_null_count": 0
+        }
+      ]
+    },
+    {
+      "path": "data/source_packages/member4_v3/tables/crop_area_by_year.csv",
+      "baseline_sha256": "e5915ae52b040fe5b02ba2d4b1366a5a18864fbe99468a3f5dfcdf9d6527afaa",
+      "row_count": 15,
+      "columns": [
+        {
+          "name": "year",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 5,
+          "min": 2021.0,
+          "max": 2025.0
+        },
+        {
+          "name": "crop_code",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 3,
+          "min": 1.0,
+          "max": 999.0
+        },
+        {
+          "name": "crop_name",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 3,
+          "min": "Corn",
+          "max": "Soybeans"
+        },
+        {
+          "name": "area_ha",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 15,
+          "min": 38365.2,
+          "max": 65061.09
+        },
+        {
+          "name": "area_pct",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 15,
+          "min": 25.8225,
+          "max": 43.7904
+        },
+        {
+          "name": "valid_denominator_ha",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": 148572.9,
+          "max": 148573.8
+        },
+        {
+          "name": "source",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 5,
+          "min": "USDA_CDL_2021_30m",
+          "max": "USDA_CDL_2025_30m"
+        }
+      ]
+    },
+    {
+      "path": "data/source_packages/member4_v3/tables/crop_class_area_by_year.csv",
+      "baseline_sha256": "e50cc6fb917830ae1f962ef7f00c7d8efc8f5b2e259f4f82e7cb7e5fa2d764f0",
+      "row_count": 156,
+      "columns": [
+        {
+          "name": "year",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 5,
+          "min": 2021.0,
+          "max": 2025.0
+        },
+        {
+          "name": "crop_code",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 41,
+          "min": 1.0,
+          "max": 229.0
+        },
+        {
+          "name": "crop_name",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 41,
+          "min": "Alfalfa",
+          "max": "Woody Wetlands"
+        },
+        {
+          "name": "pixel_count",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 135,
+          "min": 1.0,
+          "max": 722901.0
+        },
+        {
+          "name": "area_ha",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 135,
+          "min": 0.09,
+          "max": 65061.09
+        },
+        {
+          "name": "area_pct",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 128,
+          "min": 0.0001,
+          "max": 43.7904
+        },
+        {
+          "name": "valid_denominator_ha",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 2,
+          "min": 148572.9,
+          "max": 148573.8
+        },
+        {
+          "name": "source",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 5,
+          "min": "USDA_CDL_2021_30m",
+          "max": "USDA_CDL_2025_30m"
+        }
+      ]
+    },
+    {
+      "path": "data/source_packages/member4_v3/tables/crop_transitions.csv",
+      "baseline_sha256": "cd100b297f87934025008439a8a7044a42b3d1c97b39116300eba98a11233bd6",
+      "row_count": 36,
+      "columns": [
+        {
+          "name": "year_1",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 2021.0,
+          "max": 2024.0
+        },
+        {
+          "name": "year_2",
+          "inferred_csv_type": "integer",
+          "missing_count": 0,
+          "distinct_non_null_count": 4,
+          "min": 2022.0,
+          "max": 2025.0
+        },
+        {
+          "name": "transition_type",
+          "inferred_csv_type": "string",
+          "missing_count": 0,
+          "distinct_non_null_count": 9,
+          "min": "Corn -> Corn",
+          "max": "Soybeans -> Soybeans"
+        },
+        {
+          "name": "area_ha",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 36,
+          "min": 329.58,
+          "max": 50030.46
+        },
+        {
+          "name": "area_pct",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 36,
+          "min": 0.2218,
+          "max": 33.674
+        },
+        {
+          "name": "common_valid_area_ha",
+          "inferred_csv_type": "number",
+          "missing_count": 0,
+          "distinct_non_null_count": 3,
+          "min": 148539.33,
+          "max": 148573.8
+        }
+      ]
+    }
+  ]
+}

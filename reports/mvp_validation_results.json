@@ -1,0 +1,307 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    "nasa_power_monthly_features: Selected points remain separate; monthly features reuse existing audited daily aggregates. Daily data is retained in its original location.",
+    "modis_monthly_features: Use exact Story County pixel-center summaries only (37,193 pixels), not historical AOI/bounding-box summaries.",
+    "modis_monthly_features: Monthly statistics pool valid pixel observations; means are weighted by valid pixel counts. Months 2019-02 and 2021-01 have no valid statistics.",
+    "modis_monthly_features: Eighteen 16-day dates have no quality-passing pixels. December 2025 ends at the available 2025-12-19 observation; no interpolation.",
+    "modis_monthly_features: MODIS vegetation indices describe county greenness, not crop-specific stress or field observations.",
+    "modis_16day_features: Use exact Story County pixel-center summaries only (37,193 pixels), not historical AOI/bounding-box summaries.",
+    "modis_16day_features: Monthly statistics pool valid pixel observations; means are weighted by valid pixel counts. Months 2019-02 and 2021-01 have no valid statistics.",
+    "modis_16day_features: Eighteen 16-day dates have no quality-passing pixels. December 2025 ends at the available 2025-12-19 observation; no interpolation.",
+    "modis_16day_features: MODIS vegetation indices describe county greenness, not crop-specific stress or field observations.",
+    "crop_annual_features: Annual valid area is year-specific. Code 999 aggregates all classes other than Corn (1) and Soybeans (5); not a native CDL class.",
+    "crop_class_annual_features: Preserve source CDL_Class_* label placeholders; not all class names are resolved. CDL 0 and 255 are excluded; source 2024–2025 products are harmonized to 30 m.",
+    "crop_transition_features: Each year pair has its own common-valid denominator; county totals do not locate transitions or establish farm management history.",
+    "soil_mapunit_features: Root-zone AWS is NULL for all 86 map units and must never be imputed.",
+    "soil_mapunit_features: Texture, surface AWC, organic matter, drainage, and hydrologic group each have nine NULLs; slope has seven NULLs.",
+    "soil_mapunit_features: Map units are soil survey units, not farm/field ownership boundaries. No map-unit crop statistics or geometry is delivered.",
+    "merra2_monthly_context_features: Optional supporting context only; never a primary decision-driving source.",
+    "merra2_monthly_context_features: Two coarse cells at latitude 42.0 and longitudes -93.75/-93.125 remain separate; not a county-wide average or field-scale surface.",
+    "merra2_monthly_context_features: EVAP is not crop water demand, ETc, or irrigation requirement. EFLUX/HFLUX are not direct crop-stress measurements.",
+    "merra2_monthly_context_features: TSH is absent; Var_TSH is excluded, never a temperature substitute. PRECCON/PRECSNO remain deferred.",
+    "merra2_monthly_context_features: Coverage begins June 2008, so 2008 is partial. Signs and native flux-rate units are preserved; no flux conversions are added."
+  ],
+  "datasets": [
+    {
+      "dataset_name": "nasa_power_monthly_features",
+      "status": "PASS",
+      "row_count": 432,
+      "missing_counts": {
+        "location_id": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "year": 0,
+        "month": 0,
+        "month_start": 0,
+        "month_end": 0,
+        "days_expected": 0,
+        "days_present": 0,
+        "complete": 0,
+        "T2M_mean": 0,
+        "T2M_MAX_mean": 0,
+        "T2M_MIN_mean": 0,
+        "PRECTOTCORR_total": 0,
+        "PRECTOTCORR_daily_mean": 0,
+        "ALLSKY_SFC_SW_DWN_total": 0,
+        "ALLSKY_SFC_SW_DWN_daily_mean": 0,
+        "RH2M_mean": 0
+      },
+      "months_per_point": 108
+    },
+    {
+      "dataset_name": "modis_monthly_features",
+      "status": "PASS",
+      "row_count": 108,
+      "missing_counts": {
+        "month": 0,
+        "observation_count": 0,
+        "total_pixel_observations": 0,
+        "ndvi_mean": 2,
+        "ndvi_median": 2,
+        "ndvi_std": 2,
+        "ndvi_valid_pixel_count": 0,
+        "ndvi_valid_pixel_percentage": 0,
+        "evi_mean": 2,
+        "evi_median": 2,
+        "evi_std": 2,
+        "evi_valid_pixel_count": 0,
+        "evi_valid_pixel_percentage": 0
+      },
+      "zero_quality_periods": [
+        "2019-02",
+        "2021-01"
+      ]
+    },
+    {
+      "dataset_name": "modis_16day_features",
+      "status": "PASS",
+      "row_count": 207,
+      "missing_counts": {
+        "date": 0,
+        "ndvi_mean": 18,
+        "ndvi_median": 18,
+        "ndvi_std": 18,
+        "ndvi_valid_pixel_count": 0,
+        "ndvi_valid_pixel_percentage": 0,
+        "evi_mean": 18,
+        "evi_median": 18,
+        "evi_std": 18,
+        "evi_valid_pixel_count": 0,
+        "evi_valid_pixel_percentage": 0,
+        "total_pixel_count": 0,
+        "base_valid_pixel_count": 0,
+        "quality_valid_pixel_count": 0,
+        "vi_usefulness_distribution_before_filter": 0,
+        "vi_usefulness_distribution_after_filter": 0
+      },
+      "zero_quality_periods": [
+        "2018-01-01",
+        "2018-02-02",
+        "2019-01-17",
+        "2019-02-02",
+        "2019-02-18",
+        "2020-01-17",
+        "2020-02-02",
+        "2020-12-18",
+        "2021-01-01",
+        "2021-01-17",
+        "2021-02-02",
+        "2022-01-17",
+        "2022-02-02",
+        "2022-12-19",
+        "2023-01-17",
+        "2024-12-18",
+        "2025-01-01",
+        "2025-12-03"
+      ]
+    },
+    {
+      "dataset_name": "crop_annual_features",
+      "status": "PASS",
+      "row_count": 15,
+      "missing_counts": {
+        "year": 0,
+        "crop_code": 0,
+        "crop_name": 0,
+        "area_ha": 0,
+        "area_pct": 0,
+        "valid_denominator_ha": 0,
+        "source": 0
+      },
+      "denominator_checks": [
+        {
+          "period": "2021",
+          "denominator_ha": "148572.90",
+          "area_sum_ha": "148572.9",
+          "area_pct_sum": 100.0,
+          "maximum_percentage_error_points": "0.00002614171225034982826612"
+        },
+        {
+          "period": "2022",
+          "denominator_ha": "148572.90",
+          "area_sum_ha": "148572.90",
+          "area_pct_sum": 100.0,
+          "maximum_percentage_error_points": "0.00003546016803872038575003"
+        },
+        {
+          "period": "2023",
+          "denominator_ha": "148572.90",
+          "area_sum_ha": "148572.90",
+          "area_pct_sum": 100.0,
+          "maximum_percentage_error_points": "0.00002864169710626904368159"
+        },
+        {
+          "period": "2024",
+          "denominator_ha": "148573.80",
+          "area_sum_ha": "148573.80",
+          "area_pct_sum": 100.0,
+          "maximum_percentage_error_points": "0.00004904229413261288329436"
+        },
+        {
+          "period": "2025",
+          "denominator_ha": "148573.80",
+          "area_sum_ha": "148573.80",
+          "area_pct_sum": 100.0,
+          "maximum_percentage_error_points": "0.00001930676875734483468822"
+        }
+      ]
+    },
+    {
+      "dataset_name": "crop_class_annual_features",
+      "status": "PASS",
+      "row_count": 156,
+      "missing_counts": {
+        "year": 0,
+        "crop_code": 0,
+        "crop_name": 0,
+        "pixel_count": 0,
+        "area_ha": 0,
+        "area_pct": 0,
+        "valid_denominator_ha": 0,
+        "source": 0
+      },
+      "denominator_checks": [
+        {
+          "period": "2021",
+          "denominator_ha": "148572.90",
+          "area_sum_ha": "148572.90",
+          "area_pct_sum": 100.0001,
+          "maximum_percentage_error_points": "0.0000491916089677188773995796"
+        },
+        {
+          "period": "2022",
+          "denominator_ha": "148572.90",
+          "area_sum_ha": "148572.90",
+          "area_pct_sum": 99.99990000000001,
+          "maximum_percentage_error_points": "0.0000469345351675843979622125"
+        },
+        {
+          "period": "2023",
+          "denominator_ha": "148572.90",
+          "area_sum_ha": "148572.90",
+          "area_pct_sum": 99.99980000000001,
+          "maximum_percentage_error_points": "0.000048987466758742677836940653"
+        },
+        {
+          "period": "2024",
+          "denominator_ha": "148573.80",
+          "area_sum_ha": "148573.80",
+          "area_pct_sum": 100.00019999999999,
+          "maximum_percentage_error_points": "0.00004904229413261288329436"
+        },
+        {
+          "period": "2025",
+          "denominator_ha": "148573.80",
+          "area_sum_ha": "148573.80",
+          "area_pct_sum": 99.9999,
+          "maximum_percentage_error_points": "0.0000470372299826752765292400"
+        }
+      ]
+    },
+    {
+      "dataset_name": "crop_transition_features",
+      "status": "PASS",
+      "row_count": 36,
+      "missing_counts": {
+        "year_1": 0,
+        "year_2": 0,
+        "transition_type": 0,
+        "area_ha": 0,
+        "area_pct": 0,
+        "common_valid_area_ha": 0
+      },
+      "denominator_checks": [
+        {
+          "period": "(2021, 2022)",
+          "denominator_ha": "148572.90",
+          "area_sum_ha": "148572.90",
+          "area_pct_sum": 99.9999,
+          "maximum_percentage_error_points": "0.00004062611687595786310962"
+        },
+        {
+          "period": "(2022, 2023)",
+          "denominator_ha": "148572.90",
+          "area_sum_ha": "148572.90",
+          "area_pct_sum": 100.0,
+          "maximum_percentage_error_points": "0.000048766968942519126974031"
+        },
+        {
+          "period": "(2023, 2024)",
+          "denominator_ha": "148539.33",
+          "area_sum_ha": "148539.33",
+          "area_pct_sum": 100.0,
+          "maximum_percentage_error_points": "0.00004433710586953637127621"
+        },
+        {
+          "period": "(2024, 2025)",
+          "denominator_ha": "148573.80",
+          "area_sum_ha": "148573.80",
+          "area_pct_sum": 100.0,
+          "maximum_percentage_error_points": "0.00003781878096945760288826"
+        }
+      ]
+    },
+    {
+      "dataset_name": "soil_mapunit_features",
+      "status": "PASS",
+      "row_count": 86,
+      "missing_counts": {
+        "mukey": 0,
+        "musym": 0,
+        "muname": 0,
+        "dominant_texture": 9,
+        "awc_weighted_cm_per_cm": 9,
+        "organic_matter_weighted_pct": 9,
+        "dominant_drainage_class": 9,
+        "dominant_hydrologic_group": 9,
+        "slope_weighted_pct": 7,
+        "total_component_pct_accounted": 0,
+        "source": 0,
+        "root_zone_aws_0_150cm_mm": 86
+      }
+    },
+    {
+      "dataset_name": "merra2_monthly_context_features",
+      "status": "PASS",
+      "row_count": 422,
+      "missing_counts": {
+        "date": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "SPEED": 0,
+        "EVAP": 0,
+        "EFLUX": 0,
+        "HFLUX": 0
+      },
+      "months_per_cell": 211
+    }
+  ],
+  "cross_dataset_checks": [
+    "Grouped annual crop areas match the detailed class table for every year and grouped class.",
+    "Every common-valid transition denominator is bounded by both annual valid denominators.",
+    "MODIS monthly counts and NDVI/EVI weighted means match all 207 source composites; pooled medians/std are preserved, not reconstructed."
+  ],
+  "protected_file_count": 56
+}

@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "merra2_monthly_context_features",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "date",
+    "latitude",
+    "longitude",
+    "SPEED",
+    "EVAP",
+    "EFLUX",
+    "HFLUX"
+  ],
+  "properties": {
+    "date": {
+      "type": "string",
+      "description": "First-of-month label for the source monthly mean; local audit reports original NetCDF timestamp at 00:30, absent from CSV.",
+      "x-unit": null,
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "latitude": {
+      "type": "number",
+      "description": "Native coarse-grid latitude, north positive.",
+      "x-unit": "degrees_north",
+      "const": 42.0
+    },
+    "longitude": {
+      "type": "number",
+      "description": "Native coarse-grid longitude, east positive; keep both cells separate.",
+      "x-unit": "degrees_east",
+      "enum": [
+        -93.75,
+        -93.125
+      ]
+    },
+    "SPEED": {
+      "type": "number",
+      "description": "Monthly mean surface wind speed; height not separately verified as 10 m.",
+      "x-unit": "m s-1",
+      "minimum": 0
+    },
+    "EVAP": {
+      "type": "number",
+      "description": "Monthly mean evaporation_from_turbulence; signs preserved; not crop water demand, ETc, or irrigation requirement.",
+      "x-unit": "kg m-2 s-1"
+    },
+    "EFLUX": {
+      "type": "number",
+      "description": "Monthly mean total_latent_energy_flux; source signs retained without reassignment.",
+      "x-unit": "W m-2"
+    },
+    "HFLUX": {
+      "type": "number",
+      "description": "Monthly mean sensible_heat_flux_from_turbulence; source signs retained without reassignment.",
+      "x-unit": "W m-2"
+    }
+  },
+  "x-dataset": {
+    "dataset_name": "merra2_monthly_context_features",
+    "path": "data/processed/features/merra2_monthly_context_features.csv",
+    "schema_path": "src/schemas/merra2_monthly_context_features.schema.json",
+    "source_path": "data/processed/merra2/merra2_selected_monthly.csv",
+    "primary_key": [
+      "date",
+      "latitude",
+      "longitude"
+    ],
+    "temporal_grain": "Source monthly mean × native grid cell",
+    "spatial_grain": "Separate coarse MERRA-2 native cells; one latitude row and two longitudes",
+    "county_scope": {
+      "name": "Story County, Iowa",
+      "geoid": "19169"
+    },
+    "optional": true,
+    "provenance": {
+      "source_path": "data/processed/merra2/merra2_selected_monthly.csv",
+      "evidence_paths": [
+        "data/processed/merra2/merra_extraction_report.md",
+        "data/processed/merra2/merra2_final_readiness_audit.md",
+        "data/processed/merra2/merra2_analysis_report.md"
+      ],
+      "transformation": "Byte-for-byte copy of an existing validated CSV; no aggregation, imputation, conversion, or rounding."
+    },
+    "validation": {
+      "expected_row_count": 422,
+      "coverage": {
+        "start": "2008-06",
+        "end": "2025-12",
+        "months_per_cell": 211
+      },
+      "expected_missing_counts": {
+        "date": 0,
+        "latitude": 0,
+        "longitude": 0,
+        "SPEED": 0,
+        "EVAP": 0,
+        "EFLUX": 0,
+        "HFLUX": 0
+      },
+      "requirements": [
+        "Exact ordered source columns and declared CSV types.",
+        "Unique, non-null natural key within the declared spatial scope.",
+        "Finite numeric values, declared ranges, exact coverage and missing counts.",
+        "Source and output records identical, including order, precision and null markers.",
+        "Source/output/schema SHA-256 values and manifest metadata agree.",
+        "Dataset-specific calendar, denominator, quality and unit-consistency checks."
+      ]
+    },
+    "warnings": [
+      "Optional supporting context only; never a primary decision-driving source.",
+      "Two coarse cells at latitude 42.0 and longitudes -93.75/-93.125 remain separate; not a county-wide average or field-scale surface.",
+      "EVAP is not crop water demand, ETc, or irrigation requirement. EFLUX/HFLUX are not direct crop-stress measurements.",
+      "TSH is absent; Var_TSH is excluded, never a temperature substitute. PRECCON/PRECSNO remain deferred.",
+      "Coverage begins June 2008, so 2008 is partial. Signs and native flux-rate units are preserved; no flux conversions are added."
+    ]
+  },
+  "x-csv": {
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "ordered_columns": [
+      "date",
+      "latitude",
+      "longitude",
+      "SPEED",
+      "EVAP",
+      "EFLUX",
+      "HFLUX"
+    ],
+    "null_tokens": [
+      "",
+      "NULL"
+    ],
+    "boolean_tokens": {
+      "True": true,
+      "False": false
+    },
+    "decode_before_json_schema_validation": true,
+    "note": "NULL and empty cells decode to JSON null only in nullable fields. Identifiers such as mukey stay strings. Units=null means not applicable or not separately verified."
+  }
+}
