@@ -1,0 +1,305 @@
+{
+  "dataset_name": "power_daily_context",
+  "source": "NASA POWER Daily Point API",
+  "community": "AG",
+  "source_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CT2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN%2CPRECTOTCORR%2CPS%2CT2MDEW&community=AG&latitude=42.0375&longitude=-93.4661&start=20210101&end=20251231&format=CSV&time-standard=UTC",
+  "retrieval": {
+    "source_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CT2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN%2CPRECTOTCORR%2CPS%2CT2MDEW&community=AG&latitude=42.0375&longitude=-93.4661&start=20210101&end=20251231&format=CSV&time-standard=UTC",
+    "final_url": "https://power.larc.nasa.gov/api/temporal/daily/point?parameters=T2M_MAX%2CT2M_MIN%2CT2M%2CRH2M%2CWS10M%2CALLSKY_SFC_SW_DWN%2CPRECTOTCORR%2CPS%2CT2MDEW&community=AG&latitude=42.0375&longitude=-93.4661&start=20210101&end=20251231&format=CSV&time-standard=UTC",
+    "retrieved_at_utc": "2026-11-14T02:52:01.878842+00:00",
+    "http_status": 200,
+    "response_headers": {
+      "Content-Type": "text/csv",
+      "Content-Length": "109747",
+      "Connection": "close",
+      "X-Amz-Cf-Pop": "ARN52-P1",
+      "Date": "Sat, 14 Nov 2026 02:52:01 GMT",
+      "X-Amzn-Trace-Id": "Root=1-6af7ccd0-5e824961246e83532385d000;Parent=7d59843467b93ded;Sampled=0;Lineage=1:de7b4c15:0",
+      "x-amzn-RequestId": "b6b10c9c-2a65-4080-8028-17cb0d5759ef",
+      "x-process-time": "0.01",
+      "content-disposition": "attachment; filename=POWER_Point_Daily_20210101_20251231_042d04N_093d47W_UTC.csv",
+      "x-amzn-Remapped-content-length": "109747",
+      "x-data-sources": "merra2,syn1deg,power",
+      "content-language": "en-US",
+      "x-app-name": "daily",
+      "x-archive-time": "0.954",
+      "x-amz-apigw-id": "GzzwnFTtPHcEeyA=",
+      "vary": "Origin",
+      "x-app-version": "v2.10.3",
+      "x-service-time": "0.978",
+      "x-objects-time": "0.012",
+      "Via": "1.1 6a5b7b01c87fd24c09aedb45d99294e4.cloudfront.net (CloudFront), 1.1 47cc7d5981f182b935da67eb4606a37e.cloudfront.net (CloudFront)",
+      "X-Cache": "Miss from cloudfront",
+      "X-Amz-Cf-Id": "FcJqPRUfGejGFVYybUeNLFZnOZ89diJFcItjaQTTTC9ifz97GsB_Tw=="
+    },
+    "request_parameters": {
+      "parameters": "T2M_MAX,T2M_MIN,T2M,RH2M,WS10M,ALLSKY_SFC_SW_DWN,PRECTOTCORR,PS,T2MDEW",
+      "community": "AG",
+      "latitude": "42.0375",
+      "longitude": "-93.4661",
+      "start": "20210101",
+      "end": "20251231",
+      "format": "CSV",
+      "time-standard": "UTC"
+    },
+    "sha256": "24754903063ef71e9f833b216c3bdbf0524a4ad477d82b081a044733bdeba041"
+  },
+  "raw_source_path": "source/power_daily_point_response.csv",
+  "existing_data_reused": false,
+  "new_api_download_necessary": true,
+  "input_inspection_path": "input_inspection.json",
+  "requested_coordinates": {
+    "latitude": 42.0375,
+    "longitude": -93.4661
+  },
+  "returned_coordinates": {
+    "latitude": 42.0375,
+    "longitude": -93.4661
+  },
+  "coordinate_units": {
+    "latitude": "degrees_north",
+    "longitude": "degrees_east"
+  },
+  "source_grid_cell_center_coordinates": null,
+  "coordinate_note": "The CSV header echoes the request point; it does not disclose the contributing grid-cell centers. Matching coordinates do not imply field-scale observations.",
+  "source_grid_average_elevation": {
+    "meters": 310.22,
+    "spatial_support": "Average for 0.5 x 0.625 degree lat/lon region",
+    "surveyed_point_elevation": false
+  },
+  "spatial_interpretation": "One representative point requested at 42.0375, -93.4661, retaining POWER native source resolution; not a county-wide spatial average. No averaging/substitution of the four existing points.",
+  "time_standard": "UTC",
+  "date_coverage": {
+    "start": "2021-01-01",
+    "end": "2025-12-31",
+    "inclusive": true
+  },
+  "temporal_grain": "Daily UTC",
+  "primary_key": [
+    "date"
+  ],
+  "columns": [
+    "date",
+    "latitude",
+    "longitude",
+    "YEAR",
+    "DOY",
+    "T2M_MAX",
+    "T2M_MIN",
+    "T2M",
+    "RH2M",
+    "WS10M",
+    "ALLSKY_SFC_SW_DWN",
+    "PRECTOTCORR",
+    "PS",
+    "T2MDEW"
+  ],
+  "parameter_metadata": {
+    "T2M_MAX": {
+      "description": "MERRA-2 Temperature at 2 Meters Maximum",
+      "unit": "C"
+    },
+    "T2M_MIN": {
+      "description": "MERRA-2 Temperature at 2 Meters Minimum",
+      "unit": "C"
+    },
+    "T2M": {
+      "description": "MERRA-2 Temperature at 2 Meters",
+      "unit": "C"
+    },
+    "RH2M": {
+      "description": "MERRA-2 Relative Humidity at 2 Meters",
+      "unit": "%"
+    },
+    "WS10M": {
+      "description": "MERRA-2 Wind Speed at 10 Meters",
+      "unit": "m/s"
+    },
+    "ALLSKY_SFC_SW_DWN": {
+      "description": "CERES SYN1deg All Sky Surface Shortwave Downward Irradiance",
+      "unit": "MJ/m^2/day"
+    },
+    "PRECTOTCORR": {
+      "description": "MERRA-2 Precipitation Corrected",
+      "unit": "mm/day"
+    },
+    "PS": {
+      "description": "MERRA-2 Surface Pressure",
+      "unit": "kPa"
+    },
+    "T2MDEW": {
+      "description": "MERRA-2 Dew/Frost Point at 2 Meters",
+      "unit": "C"
+    }
+  },
+  "optional_T2MDEW": {
+    "available": true,
+    "unit": "C",
+    "description": "MERRA-2 Dew/Frost Point at 2 Meters"
+  },
+  "missing_value_policy": {
+    "imputation": "none",
+    "source_fill_value": -999.0,
+    "csv_encoding": "Source numeric strings, blanks and fill markers are preserved verbatim; Backend must treat fill as missing, never as weather observations."
+  },
+  "transformation": "Add ISO date from YEAR/DOY and returned header coordinates; retain parameter strings/order without conversion, rounding, aggregation or imputation.",
+  "validation": {
+    "actual_records": 1826,
+    "expected_records": 1826,
+    "missing_dates": [],
+    "unexpected_dates": [],
+    "duplicate_date_count": 0,
+    "chronologically_complete": true,
+    "missing_values": {
+      "T2M_MAX": 0,
+      "T2M_MIN": 0,
+      "T2M": 0,
+      "RH2M": 0,
+      "WS10M": 0,
+      "ALLSKY_SFC_SW_DWN": 0,
+      "PRECTOTCORR": 0,
+      "PS": 0,
+      "T2MDEW": 0
+    },
+    "fill_values": {
+      "T2M_MAX": 0,
+      "T2M_MIN": 0,
+      "T2M": 0,
+      "RH2M": 0,
+      "WS10M": 0,
+      "ALLSKY_SFC_SW_DWN": 0,
+      "PRECTOTCORR": 0,
+      "PS": 0,
+      "T2MDEW": 0
+    },
+    "out_of_screen_range_values": {
+      "T2M_MAX": 0,
+      "T2M_MIN": 0,
+      "T2M": 0,
+      "RH2M": 0,
+      "WS10M": 0,
+      "ALLSKY_SFC_SW_DWN": 0,
+      "PRECTOTCORR": 0,
+      "PS": 0,
+      "T2MDEW": 0
+    },
+    "observed_ranges": {
+      "T2M_MAX": {
+        "min": -20.13,
+        "max": 40.22
+      },
+      "T2M_MIN": {
+        "min": -29.08,
+        "max": 27.35
+      },
+      "T2M": {
+        "min": -24.5,
+        "max": 31.58
+      },
+      "RH2M": {
+        "min": 36.42,
+        "max": 99.63
+      },
+      "WS10M": {
+        "min": 1.0,
+        "max": 14.66
+      },
+      "ALLSKY_SFC_SW_DWN": {
+        "min": 0.92,
+        "max": 31.56
+      },
+      "PRECTOTCORR": {
+        "min": 0.0,
+        "max": 55.99
+      },
+      "PS": {
+        "min": 95.21,
+        "max": 100.02
+      },
+      "T2MDEW": {
+        "min": -26.36,
+        "max": 25.36
+      }
+    },
+    "screen_ranges": {
+      "T2M_MAX": [
+        -100,
+        70
+      ],
+      "T2M_MIN": [
+        -100,
+        70
+      ],
+      "T2M": [
+        -100,
+        70
+      ],
+      "T2MDEW": [
+        -100,
+        70
+      ],
+      "RH2M": [
+        0,
+        100
+      ],
+      "WS10M": [
+        0,
+        100
+      ],
+      "ALLSKY_SFC_SW_DWN": [
+        0,
+        60
+      ],
+      "PRECTOTCORR": [
+        0,
+        1000
+      ],
+      "PS": [
+        50,
+        110
+      ]
+    },
+    "range_policy": "Broad plausibility screens for Iowa, not NASA valid-range metadata; fail and investigate, never clip.",
+    "returned_units_match": true,
+    "requested_and_returned_coordinates_match": true,
+    "source_checksum_matches": true,
+    "all_preexisting_files_unchanged": true,
+    "protected_preexisting_file_count": 84,
+    "status": "PASS"
+  },
+  "et0_readiness": {
+    "status": "Conditionally supports a future FAO-56 daily ET0 implementation; no ET0 calculated.",
+    "available": [
+      "Daily Tmin/Tmax/Tmean in C, RHmean in %, WS10M in m/s, incoming solar radiation in MJ/m^2/day, pressure in kPa, date and latitude.",
+      "Optional T2MDEW is returned in C, explicitly labelled Dew/Frost Point, with no missing cells.",
+      "Header reports MERRA-2 grid-average elevation 310.22 m; this is not surveyed point elevation."
+    ],
+    "required_decisions_and_assumptions": [
+      "Convert 10 m wind to 2 m wind using FAO-56 Eq. 47 and its reference-surface assumptions; do not use WS10M directly as u2.",
+      "Incoming shortwave Rs is not net radiation Rn. Derive net shortwave with reference-grass albedo 0.23 and estimate net longwave with documented FAO-56 assumptions.",
+      "Clear-sky radiation needs an elevation choice. Surveyed point elevation is absent; explicitly approve the supplied coarse grid-average elevation or supply a validated point elevation in a separate task. Do not silently reinterpret it.",
+      "RHmax/RHmin are absent. Evaluate a daily mean dew/frost-point vapour-pressure method (including freezing conventions and nonlinear daily averaging) or the less preferred RHmean method; do not invent RH extrema.",
+      "Use validated PS in kPa for the psychrometric constant; no pressure unit conversion is needed.",
+      "Document daily soil heat flux G≈0, extraterrestrial radiation from latitude/day-of-year, reference grass assumptions and consistency of UTC daily aggregates with FAO daily procedures.",
+      "Reanalysis and satellite point-request values retain native spatial support, not field measurements; validate future ET0 implementation and missing-data handling before use."
+    ],
+    "not_provided": [
+      "ET0",
+      "ETc",
+      "irrigation requirements",
+      "crop water savings"
+    ],
+    "reference": "https://www.fao.org/4/x0490e/x0490e07.htm"
+  },
+  "references": {
+    "nasa_daily_api": "https://power.larc.nasa.gov/docs/services/api/temporal/daily/",
+    "fao56_meteorology": "https://www.fao.org/4/x0490e/x0490e07.htm"
+  },
+  "checksums": {
+    "algorithm": "SHA-256",
+    "source_csv": "24754903063ef71e9f833b216c3bdbf0524a4ad477d82b081a044733bdeba041",
+    "output_csv": "b0d5515c546e8e1b69262880a625cbb8e54a4eb86231efbe53c39c2f73649ae3",
+    "input_inspection": "d31ab5ffd7a2a67918c63805b2a33b104583985920f46837a391a14d2a5625f5",
+    "source_preservation_baseline": "9138674a9ba7f84a44cb891265d58746ceeb505857fd7620be17cf39e4fe8a42"
+  }
+}
